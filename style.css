@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'MontserratArabic';
+    src: url('public/font/Montserrat.ttf') format('truetype');
+}
+
+*{
+    font-family: "MontserratArabic", sans-serif;
+    font-style: normal;
+}

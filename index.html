@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+
+
+
+    <title>Vite App</title>
+    <style>
+        .overlay {
+            z-index: 5;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0));
+        }
+
+        .transformCenter {
+            transform: translate(-50%, 0);
+        }
+
+        .hover-rise img {
+            transition: transform 0.5s ease, opacity 1s ease;
+        }
+
+        .hover-rise:hover img {
+            transform: translateY(-200px);
+            opacity: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="w-full lg:h-[1080px] md:h-[576px] h-[462px]  relative custom-bg">
+    <div class="overlay"></div>
+    <img src="public/bg.jpeg" alt="..." class="w-full h-full absolute top-0 left-0 "/>
+    <div class="lg:h-[128px] md:h-[80px] h-[45px] z-10 relative lg:mx-32 md:mx-28 mx-8 flex justify-between">
+
+        <div class="max-w-[325px]  max-h-[128px]">
+            <img src="./public/log.png" alt="''" class="lg:w-[325px] md:w-[203px] w-[114px]">
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="lg:hidden md:hidden block">
+            <path fill="#ffff" d="M3 18v-2h18v2zm0-5v-2h18v2zm0-5V6h18v2z"/>
+        </svg>
+        <div class=" w-1/2 lg:flex md:flex hidden h-full justify-between items-center text-[#FEFBF6] ">
+            <span class=" lg:text-[32px] md:text-[20px] font-normal">تواصل معنا</span>
+            <span class=" lg:text-[32px] md:text-[20px] font-normal">حول</span>
+            <span class=" lg:text-[32px] md:text-[20px] font-normal">الخدمات</span>
+            <span class=" lg:text-[32px] md:text-[20px] font-semibold">الرأيسية</span>
+        </div>
+    </div>
+    <div class="absolute z-10 top-1/2 left-1/2 flex flex-col  items-center transformCenter">
+        <h2 class="font-normal lg:text-[48px] md:text-[24px] text-[18px] text-white ">اصنع لنفسك عالماً مع</h2>
+        <h1 class=" font-bold h-auto lg:text-[128px] md:text-[64px] text-[40px] text-white ">عالم الشّتر</h1>
+        <button type="button"
+                class="text-white lg:text-[32px] md:text-[24px] text-[12px]  font-extrabold bg-[#72AEE6] hover:bg-[#6196c7]  rounded-xl  lg:px-[48px] lg:py-[12px] md:px-[26px] md:py-[6px]  px-[20px] py-[4px] mt-4  ">
+            اطلب الآن
+        </button>
+
+    </div>
+</div>
+<div class="w-full flex flex-col my-32 items-start">
+    <div class=" text-center  pr-3 relative  w-[40%] text-white">
+        <img src="public/bglier.png" alt="..." class="w-full h-full absolute top-0 left-0 ">
+        <h3 class="z-10 font-extrabold lg:text-[48px] md:text-[32px] text-[20px]	relative">لماذا نحن؟</h3>
+    </div>
+    <div class=" flex w-full justify-around mt-12">
+        <div class="flex lg:flex-row md:flex-row flex-col items-center justify-center">
+            <svg class="lg:w-[96px] lg:h-[96px] md:w-[48px] md:h-[48px] w-[24px] h-[24px]" viewBox="0 0 96 97"
+                 fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 66.5005H75V30.3445L51.798 11.3605C50.7262 10.4842 49.3844 10.0054 48 10.0054C46.6156 10.0054 45.2738 10.4842 44.202 11.3605L21 30.3445V66.5005ZM21 72.5005V84.5005H75V72.5005H21ZM55.596 6.71654L79.896 26.6005C80.2406 26.8816 80.5184 27.2357 80.7094 27.6373C80.9003 28.0389 80.9996 28.4779 81 28.9225V87.5005C81 88.2962 80.6839 89.0592 80.1213 89.6219C79.5587 90.1845 78.7957 90.5005 78 90.5005H18C17.2044 90.5005 16.4413 90.1845 15.8787 89.6219C15.3161 89.0592 15 88.2962 15 87.5005V28.9225C14.9997 28.4783 15.098 28.0396 15.2879 27.6381C15.4778 27.2365 15.7545 26.8822 16.098 26.6005L40.398 6.71654C42.542 4.96233 45.2268 4.00391 47.997 4.00391C50.7672 4.00391 53.452 4.96233 55.596 6.71654Z"
+                      fill="#72AEE6"/>
+                <path d="M48 42.5C49.5913 42.5 51.1174 41.8679 52.2426 40.7426C53.3679 39.6174 54 38.0913 54 36.5C54 34.9087 53.3679 33.3826 52.2426 32.2574C51.1174 31.1321 49.5913 30.5 48 30.5C46.4087 30.5 44.8826 31.1321 43.7574 32.2574C42.6321 33.3826 42 34.9087 42 36.5C42 38.0913 42.6321 39.6174 43.7574 40.7426C44.8826 41.8679 46.4087 42.5 48 42.5ZM48 48.5C44.8174 48.5 41.7652 47.2357 39.5147 44.9853C37.2643 42.7348 36 39.6826 36 36.5C36 33.3174 37.2643 30.2652 39.5147 28.0147C41.7652 25.7643 44.8174 24.5 48 24.5C51.1826 24.5 54.2348 25.7643 56.4853 28.0147C58.7357 30.2652 60 33.3174 60 36.5C60 39.6826 58.7357 42.7348 56.4853 44.9853C54.2348 47.2357 51.1826 48.5 48 48.5Z"
+                      fill="#72AEE6"/>
+            </svg>
+            <p class="font-extrabold lg:text-[36px] md:text-[18px] text-[16px] mr-2">
+                أسعار مميزة
+            </p>
+
+        </div>
+        <div class="h-auto w-[2px] bg-[#72AEE6] lg:block md:block hidden"></div>
+
+        <div class="flex lg:flex-row md:flex-row flex-col items-center justify-center">
+            <svg class="lg:w-[96px] lg:h-[96px] md:w-[48px] md:h-[48px] w-[24px] h-[24px]" viewBox="0 0 70 97"
+                 fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50.6185 72.2349V87.047L57.7152 90.0007V68.3533C55.486 69.8822 53.1084 71.1826 50.6185 72.2349ZM12.2872 68.3533V89.853L19.3839 86.8993V72.2349C16.894 71.1826 14.5164 69.8822 12.2872 68.3533ZM35.0011 75.386C31.65 75.3879 28.3118 74.9708 25.0642 74.1446V96.5L35.0011 92.3643L44.938 96.4998V74.1446C41.6904 74.9708 38.3522 75.3878 35.0011 75.386ZM35.0011 0.5C15.9212 0.5 0.398438 16.0227 0.398438 35.1029C0.398438 54.183 15.9212 69.7056 35.0011 69.7056C54.0811 69.7056 69.604 54.1828 69.604 35.1027C69.604 16.0225 54.0813 0.5 35.0011 0.5ZM35.0011 62.3936C19.875 62.3936 7.5688 50.0875 7.5688 34.9613C7.5688 19.835 19.875 7.5288 35.0011 7.5288C50.1273 7.5288 62.4334 19.835 62.4334 34.9613C62.4334 50.0877 50.1275 62.3936 35.0011 62.3936ZM35.0011 13.2091C23.0071 13.2091 13.2491 22.967 13.2491 34.9613C13.2491 46.9557 23.0071 56.7131 35.0011 56.7131C46.9951 56.7131 56.7531 46.9553 56.7531 34.9611C56.7531 22.967 46.9953 13.2091 35.0011 13.2091ZM43.9413 47.6562L35.0011 42.9561L26.0611 47.6562L27.7685 37.7014L20.5359 30.6514L30.5313 29.1989L35.0011 20.1415L39.4711 29.1989L49.4665 30.6514L42.2339 37.7014L43.9413 47.6562Z"
+                      fill="#72AEE6"/>
+            </svg>
+            <p class="font-extrabold lg:text-[36px] md:text-[18px] text-[16px] mr-2">
+                جودة عالية
+            </p>
+        </div>
+        <div class="h-auto w-[2px] bg-[#72AEE6] lg:block md:block hidden"></div>
+
+        <div class="flex lg:flex-row md:flex-row flex-col items-center justify-center">
+            <svg class="lg:w-[96px] lg:h-[96px] md:w-[48px] md:h-[48px] w-[24px] h-[24px]" viewBox="0 0 96 97"
+                 fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M79.2002 41.22C77.9602 28.5 70.4402 8.5 47.2002 8.5C23.9602 8.5 16.4402 28.5 15.2002 41.22C10.8502 42.8709 7.98094 47.0473 8.0001 51.7V57.3C8.0001 63.4856 13.0146 68.5 19.2002 68.5C25.3858 68.5 30.4002 63.4856 30.4002 57.3V51.7C30.3801 47.1478 27.6162 43.0572 23.4002 41.34C24.2002 33.98 28.1202 16.5 47.2002 16.5C66.2802 16.5 70.1602 33.98 70.9602 41.34C66.7527 43.0609 64.0028 47.1542 64.0002 51.7V57.3C64.0176 61.5999 66.4866 65.5131 70.3602 67.38C68.6802 70.54 64.4002 74.82 53.8802 76.1C51.7773 72.9068 47.7088 71.6479 44.17 73.0956C40.6311 74.5432 38.6113 78.2925 39.3493 82.0441C40.0873 85.7957 43.3767 88.5 47.2002 88.5C50.2215 88.4833 52.9757 86.7658 54.3202 84.06C71.4802 82.1 76.9602 73.26 78.6802 68.06C83.3335 66.5527 86.4629 62.1909 86.4002 57.3V51.7C86.4194 47.0473 83.5501 42.8709 79.2002 41.22ZM22.4002 57.3C22.4002 59.0673 20.9675 60.5 19.2002 60.5C17.4329 60.5 16.0002 59.0673 16.0002 57.3V51.7C16.0002 50.5567 16.6101 49.5003 17.6002 48.9287C18.5903 48.3571 19.8101 48.3571 20.8002 48.9287C21.7903 49.5003 22.4002 50.5567 22.4002 51.7V57.3ZM72.0002 51.7C72.0002 49.9327 73.4329 48.5 75.2002 48.5C76.9675 48.5 78.4002 49.9327 78.4002 51.7V57.3C78.4002 59.0673 76.9675 60.5 75.2002 60.5C73.4329 60.5 72.0002 59.0673 72.0002 57.3V51.7Z"
+                      fill="#72AEE6"/>
+            </svg>
+            <p class="font-extrabold lg:text-[36px] md:text-[18px] text-[16px] mr-2">
+                دعم مستمر
+            </p>
+        </div>
+    </div>
+</div>
+<div class="w-full flex flex-col my-32 items-start">
+    <div class=" text-center  pr-3 relative  w-[40%] text-white">
+        <img src="public/bglier.png" alt="..." class="w-full h-full absolute top-0 left-0 ">
+        <h3 class="z-10 font-extrabold lg:text-[48px] md:text-[32px] text-[20px]	relative">الخدمات</h3>
+    </div>
+    <div class="flex w-full justify-around mt-12">
+        <div class="flex flex-col items-center justify-center cursor-pointer ">
+            <img src="public/dorUp.png" alt="..." class="lg:w-[256px] md:w-[128px] w-[70px]">
+            <div class="hover-rise ">
+                <img src="public/dor.jpeg" alt="..." class="lg:w-[224px]   md:w-[112px] w-[61px]  ">
+            </div>
+        </div>
+        <div class="flex flex-col items-center justify-center cursor-pointer ">
+            <img src="public/dorUp.png" alt="..." class="lg:w-[256px] md:w-[128px] w-[70px]">
+            <div class="hover-rise ">
+                <img src="public/dor.jpeg" alt="..." class="lg:w-[224px]   md:w-[112px] w-[61px]  ">
+            </div>
+        </div>
+        <div class="flex flex-col items-center justify-center cursor-pointer ">
+            <img src="public/dorUp.png" alt="..." class="lg:w-[256px] md:w-[128px] w-[70px]">
+            <div class="hover-rise ">
+                <img src="public/dor.jpeg" alt="..." class="lg:w-[224px]   md:w-[112px] w-[61px]  ">
+            </div>
+        </div>
+        <div class="flex flex-col items-center justify-center cursor-pointer ">
+            <img src="public/dorUp.png" alt="..." class="lg:w-[256px] md:w-[128px] w-[70px]">
+            <div class="hover-rise ">
+                <img src="public/dor.jpeg" alt="..." class="lg:w-[224px]   md:w-[112px] w-[61px]  ">
+            </div>
+        </div>
+        <div class="flex flex-col items-center justify-center cursor-pointer ">
+            <img src="public/dorUp.png" alt="..." class="lg:w-[256px] md:w-[128px] w-[70px]">
+            <div class="hover-rise ">
+                <img src="public/dor.jpeg" alt="..." class="lg:w-[224px]   md:w-[112px] w-[61px]  ">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+<script type="module" src="/main.js"></script>
+
+</body>
+
+</html>
