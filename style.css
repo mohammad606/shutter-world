@@ -12,9 +12,7 @@
     font-family: "MontserratArabic", sans-serif;
     font-style: normal;
 }
-.contenar{
-    scrollbar-width:none;
-}
+
 .overflowBody{
     overflow-y: hidden;
 }
@@ -23,6 +21,7 @@
     transform: translateX(0) !important;
 }
 .hideLang{
+    display: none;
     transform: translateX(100%) !important;
 
 }
