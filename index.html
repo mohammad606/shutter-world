@@ -1,10 +1,6 @@
 <!doctype html>
-@php
-$locale = app()->getLocale();
-$lang = false;
 
-@endphp
-<html lang="{{$locale}}" dir="{{$locale == "ar" ? "rtl" : "ltr"}}">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,117 +8,152 @@ $lang = false;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="/style.css"/>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <title>Document</title>
-    @vite(['resources/css/app.css' , 'resources/js/app.js'])
 </head>
-<body class="body overflow-x-hidden">
-<div class="menu w-full absolute h-full bg-white flex flex-col items-center top-[50px] sm:top-[70px] md:top-[80px] hideLang duration-300 right-0 z-50 ">
-    <div class="w-full h-[10vh] flex justify-center items-center">
-        <h2 class="text-[30px] nanum !font-bold	">Menu</h2>
-    </div>
-    <div class="flex w-2/3 flex-col gap-6 justify-center items-start  text-[25px] ">
-        <div class="w-full group">
-            <div class="flex justify-between cursor-pointer ">
-                <h4 class="nanum !font-bold cursor-pointer group-hover:text-darkBlue ">Home</h4>
-                <img src="{{asset('images/hamer.png')}}" alt=".." class="w-0 duration-100 h-12 group-hover:w-20">
+<body class="body relative overflow-x-hidden">
+<div class="menu absolute w-full h-full bg-white flex flex-col items-center top-[50px] sm:top-[70px] md:top-[80px] hideLang duration-300 right-0 z-50 ">
+        <div class="w-full h-[10vh] flex justify-center items-center">
+            <h2 class="text-[30px] nanum !font-bold	">Menu</h2>
+        </div>
+        <div class="flex w-2/3 flex-col gap-6 justify-center items-start  text-[25px] ">
+            <div class="w-full group">
+                <div class="flex justify-between cursor-pointer ">
+                    <h4 class="nanum !font-bold cursor-pointer group-hover:text-darkBlue ">Home</h4>
+                    <img src="/hamer.png" alt=".." class="w-0 duration-100 h-12 group-hover:w-20">
+                </div>
+                <hr class="w-full h-2 mt-2 bg-darkBlue">
             </div>
-            <hr class="w-full h-2 mt-2 bg-darkBlue">
-        </div>
-        <div class="w-full group">
-            <div class="flex justify-between cursor-pointer">
-                <h4 class="nanum !font-bold cursor-pointer group-hover:text-darkBlue ">Blog</h4>
-                <img src="{{asset('images/hamer.png')}}" alt=".." class="w-0 duration-100 h-12 group-hover:w-20">
+            <div class="w-full group">
+                <div class="flex justify-between cursor-pointer">
+                    <h4 class="nanum !font-bold cursor-pointer group-hover:text-darkBlue ">Blog</h4>
+                    <img src="/hamer.png" alt=".." class="w-0 duration-100 h-12 group-hover:w-20">
+                </div>
+                <hr class="w-full h-2 mt-2 !bg-darkBlue">
             </div>
-            <hr class="w-full h-2 mt-2 !bg-darkBlue">
-        </div>
-        <div class="w-full group">
-            <div class="flex justify-between cursor-pointer">
-                <h4 class="nanum !font-bold cursor-pointer group-hover:text-darkBlue ">Cases</h4>
-                <img src="{{asset('images/hamer.png')}}" alt=".." class="w-0 duration-100 h-12 group-hover:w-20 ">
+            <div class="w-full group">
+                <div class="flex justify-between cursor-pointer">
+                    <h4 class="nanum !font-bold cursor-pointer group-hover:text-darkBlue ">Cases</h4>
+                    <img src="/hamer.png" alt=".." class="w-0 duration-100 h-12 group-hover:w-20 ">
+                </div>
+                <hr class="w-full h-2 mt-2 bg-darkBlue">
             </div>
-            <hr class="w-full h-2 mt-2 bg-darkBlue">
+        </div>
+        <div class=" mt-12 w-2/3 flex flex-col gap-6">
+            <h3 class="text-[28px]">Call:</h3>
+            <div class=" text-[15px] md:text-[20px] flex gap-4">
+                <h5 class="text-darkBlue">Phone :</h5>
+                <p>+201094221030</p>
+            </div>
+            <div class=" text-[15px] md:text-[20px] flex gap-4">
+                <h5 class="text-darkBlue">Whats App :</h5>
+                <p>+201050923293</p>
+            </div>
+            <div class=" text-[15px] md:text-[20px] flex gap-4">
+                <h5 class="text-darkBlue">Email :</h5>
+                <p>mohammad123alhalabi123@gmail.com</p>
+            </div>
+            <div class="flex gap-6">
+                <svg class="w-8 h-8 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                    <path fill="#1877f2"
+                          d="M256 128C256 57.308 198.692 0 128 0S0 57.308 0 128c0 63.888 46.808 116.843 108 126.445V165H75.5v-37H108V99.8c0-32.08 19.11-49.8 48.348-49.8C170.352 50 185 52.5 185 52.5V84h-16.14C152.959 84 148 93.867 148 103.99V128h35.5l-5.675 37H148v89.445c61.192-9.602 108-62.556 108-126.445"/>
+                    <path fill="#fff"
+                          d="m177.825 165l5.675-37H148v-24.01C148 93.866 152.959 84 168.86 84H185V52.5S170.352 50 156.347 50C127.11 50 108 67.72 108 99.8V128H75.5v37H108v89.445A129 129 0 0 0 128 256a129 129 0 0 0 20-1.555V165z"/>
+                </svg>
+                <svg class="w-8 h-8 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 209">
+                    <path fill="#55acee"
+                          d="M256 25.45a105 105 0 0 1-30.166 8.27c10.845-6.5 19.172-16.793 23.093-29.057a105.2 105.2 0 0 1-33.351 12.745C205.995 7.201 192.346.822 177.239.822c-29.006 0-52.523 23.516-52.523 52.52c0 4.117.465 8.125 1.36 11.97c-43.65-2.191-82.35-23.1-108.255-54.876c-4.52 7.757-7.11 16.78-7.11 26.404c0 18.222 9.273 34.297 23.365 43.716a52.3 52.3 0 0 1-23.79-6.57q-.004.33-.003.661c0 25.447 18.104 46.675 42.13 51.5a52.6 52.6 0 0 1-23.718.9c6.683 20.866 26.08 36.05 49.062 36.475c-17.975 14.086-40.622 22.483-65.228 22.483c-4.24 0-8.42-.249-12.529-.734c23.243 14.902 50.85 23.597 80.51 23.597c96.607 0 149.434-80.031 149.434-149.435q0-3.417-.152-6.795A106.8 106.8 0 0 0 256 25.45"/>
+                </svg>
+                <svg class="w-8 h-8 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                    <path fill="#0a66c2"
+                          d="M218.123 218.127h-37.931v-59.403c0-14.165-.253-32.4-19.728-32.4c-19.756 0-22.779 15.434-22.779 31.369v60.43h-37.93V95.967h36.413v16.694h.51a39.91 39.91 0 0 1 35.928-19.733c38.445 0 45.533 25.288 45.533 58.186zM56.955 79.27c-12.157.002-22.014-9.852-22.016-22.009s9.851-22.014 22.008-22.016c12.157-.003 22.014 9.851 22.016 22.008A22.013 22.013 0 0 1 56.955 79.27m18.966 138.858H37.95V95.967h37.97zM237.033.018H18.89C8.58-.098.125 8.161-.001 18.471v219.053c.122 10.315 8.576 18.582 18.89 18.474h218.144c10.336.128 18.823-8.139 18.966-18.474V18.454c-.147-10.33-8.635-18.588-18.966-18.453"/>
+                </svg>
+                <svg class="w-8 h-8 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 258">
+                    <defs>
+                        <linearGradient id="logosWhatsappIcon0" x1="50%" x2="50%" y1="100%" y2="0%">
+                            <stop offset="0%" stop-color="#1faf38"/>
+                            <stop offset="100%" stop-color="#60d669"/>
+                        </linearGradient>
+                        <linearGradient id="logosWhatsappIcon1" x1="50%" x2="50%" y1="100%" y2="0%">
+                            <stop offset="0%" stop-color="#f9f9f9"/>
+                            <stop offset="100%" stop-color="#fff"/>
+                        </linearGradient>
+                    </defs>
+                    <path fill="url(#logosWhatsappIcon0)"
+                          d="M5.463 127.456c-.006 21.677 5.658 42.843 16.428 61.499L4.433 252.697l65.232-17.104a123 123 0 0 0 58.8 14.97h.054c67.815 0 123.018-55.183 123.047-123.01c.013-32.867-12.775-63.773-36.009-87.025c-23.23-23.25-54.125-36.061-87.043-36.076c-67.823 0-123.022 55.18-123.05 123.004"/>
+                    <path fill="url(#logosWhatsappIcon1)"
+                          d="M1.07 127.416c-.007 22.457 5.86 44.38 17.014 63.704L0 257.147l67.571-17.717c18.618 10.151 39.58 15.503 60.91 15.511h.055c70.248 0 127.434-57.168 127.464-127.423c.012-34.048-13.236-66.065-37.3-90.15C194.633 13.286 162.633.014 128.536 0C58.276 0 1.099 57.16 1.071 127.416m40.24 60.376l-2.523-4.005c-10.606-16.864-16.204-36.352-16.196-56.363C22.614 69.029 70.138 21.52 128.576 21.52c28.3.012 54.896 11.044 74.9 31.06c20.003 20.018 31.01 46.628 31.003 74.93c-.026 58.395-47.551 105.91-105.943 105.91h-.042c-19.013-.01-37.66-5.116-53.922-14.765l-3.87-2.295l-40.098 10.513z"/>
+                    <path fill="#fff"
+                          d="M96.678 74.148c-2.386-5.303-4.897-5.41-7.166-5.503c-1.858-.08-3.982-.074-6.104-.074c-2.124 0-5.575.799-8.492 3.984c-2.92 3.188-11.148 10.892-11.148 26.561s11.413 30.813 13.004 32.94c1.593 2.123 22.033 35.307 54.405 48.073c26.904 10.609 32.379 8.499 38.218 7.967c5.84-.53 18.844-7.702 21.497-15.139c2.655-7.436 2.655-13.81 1.859-15.142c-.796-1.327-2.92-2.124-6.105-3.716s-18.844-9.298-21.763-10.361c-2.92-1.062-5.043-1.592-7.167 1.597c-2.124 3.184-8.223 10.356-10.082 12.48c-1.857 2.129-3.716 2.394-6.9.801c-3.187-1.598-13.444-4.957-25.613-15.806c-9.468-8.442-15.86-18.867-17.718-22.056c-1.858-3.184-.199-4.91 1.398-6.497c1.431-1.427 3.186-3.719 4.78-5.578c1.588-1.86 2.118-3.187 3.18-5.311c1.063-2.126.531-3.986-.264-5.579c-.798-1.593-6.987-17.343-9.819-23.64"/>
+                </svg>
+            </div>
         </div>
     </div>
-    <div class=" mt-12 w-2/3 flex flex-col gap-6">
-        <h3 class="text-[28px]">Call:</h3>
-        <div class=" text-[15px] md:text-[20px] flex gap-4">
-            <h5 class="text-darkBlue">Phone :</h5>
-            <p>+201094221030</p>
+    <nav
+            class=" flex w-full relative overflow-x-clip justify-between px-6 h-[50px] sm:h-[70px] md:h-[80px] lg:h-[94px] border-b-2 border-[#5892B7]">
+        <div class="w-1/3 sm:w-2/4 md:w-1/3 flex justify-start items-center">
+            <img src="/logo1.png" alt="..." class="h-[80%]">
         </div>
-        <div class=" text-[15px] md:text-[20px] flex gap-4">
-            <h5 class="text-darkBlue">Whats App :</h5>
-            <p>+201050923293</p>
+        <div class="w-full h-full hidden md:flex justify-between">
+            <div
+                    class="w-full mx-3 max-w-[450px]  text-[#435B76] text-[20px] font-bold flex justify-around items-center">
+                <div class="flex flex-col justify-center items-center cursor-pointer group hover:text-darkBlue">
+                    <a href="#home">Home</a>
+                    <span class="w-0 h-[2px] bg-darkBlue duration-300 group-hover:w-full"></span>
+                </div>
+                <div class="flex flex-col justify-center items-center cursor-pointer group hover:text-darkBlue">
+                    <a href="#blog">Blog</a>
+                    <span class="w-0 h-[2px] bg-darkBlue duration-300 group-hover:w-full"></span>
+                </div>
+                <div class="flex flex-col justify-center items-center cursor-pointer group hover:text-darkBlue">
+                    <a href="#cases">Cases</a>
+                    <span class="w-0 h-[2px] bg-darkBlue duration-300 group-hover:w-full"></span>
+                </div>
+                <div class="flex flex-col justify-center items-center cursor-pointer group hover:text-darkBlue">
+                    <a href="#contact">Contact</a>
+                    <span class="w-0 h-[2px] bg-darkBlue duration-300 group-hover:w-full"></span>
+                </div>
+            </div>
+            <div  class=" flex justify-end items-center ">
+                <div class=" flex gap-2 cursor-pointer relative">
+                    <div class="btnLang absolute w-full h-full top-0 left-0 z-20 "></div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" class="w-12 h-6 rounded-2xl">
+                        <path fill="#bd3d44" d="M0 0h640v480H0"/>
+                        <path stroke="#fff" stroke-width="37"
+                              d="M0 55.3h640M0 129h640M0 203h640M0 277h640M0 351h640M0 425h640"/>
+                        <path fill="#192f5d" d="M0 0h364.8v258.5H0"/>
+                        <marker id="flagUs4x30" markerHeight="30" markerWidth="30">
+                            <path fill="#fff" d="m14 0l9 27L0 10h28L5 27z"/>
+                        </marker>
+                        <path fill="none" marker-mid="url(#flagUs4x30)"
+                              d="m0 0l16 11h61h61h61h61h60L47 37h61h61h60h61L16 63h61h61h61h61h60L47 89h61h61h60h61L16 115h61h61h61h61h60L47 141h61h61h60h61L16 166h61h61h61h61h60L47 192h61h61h60h61L16 218h61h61h61h61h60z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-7 h-7 duration-300 chevron">
+                        <path fill="#0e7bc0" fill-rule="evenodd"
+                              d="M4.293 7.793a1 1 0 0 1 1.414 0L12 14.086l6.293-6.293a1 1 0 1 1 1.414 1.414L13.414 15.5a2 2 0 0 1-2.828 0L4.293 9.207a1 1 0 0 1 0-1.414"
+                              clip-rule="evenodd"/>
+                    </svg>
+                </div>
+            </div>
         </div>
-        <div class=" text-[15px] md:text-[20px] flex gap-4">
-            <h5 class="text-darkBlue">Email :</h5>
-            <p>mohammad123alhalabi123@gmail.com</p>
-        </div>
-        <div class="flex gap-6">
-            <svg class="w-8 h-8 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-                <path fill="#1877f2"
-                      d="M256 128C256 57.308 198.692 0 128 0S0 57.308 0 128c0 63.888 46.808 116.843 108 126.445V165H75.5v-37H108V99.8c0-32.08 19.11-49.8 48.348-49.8C170.352 50 185 52.5 185 52.5V84h-16.14C152.959 84 148 93.867 148 103.99V128h35.5l-5.675 37H148v89.445c61.192-9.602 108-62.556 108-126.445"/>
-                <path fill="#fff"
-                      d="m177.825 165l5.675-37H148v-24.01C148 93.866 152.959 84 168.86 84H185V52.5S170.352 50 156.347 50C127.11 50 108 67.72 108 99.8V128H75.5v37H108v89.445A129 129 0 0 0 128 256a129 129 0 0 0 20-1.555V165z"/>
+        <div class="w-1/4 md:hidden flex justify-end items-center ">
+            <svg
+                    class="menuIcon h-[70%] p-1 cursor-pointer stroke-darkBlue rounded-full hover:bg-darkBlue hover:stroke-white"
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"
+                      d="M12 17h7M5 12h14M5 7h14"/>
             </svg>
-            <svg class="w-8 h-8 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 209">
-                <path fill="#55acee"
-                      d="M256 25.45a105 105 0 0 1-30.166 8.27c10.845-6.5 19.172-16.793 23.093-29.057a105.2 105.2 0 0 1-33.351 12.745C205.995 7.201 192.346.822 177.239.822c-29.006 0-52.523 23.516-52.523 52.52c0 4.117.465 8.125 1.36 11.97c-43.65-2.191-82.35-23.1-108.255-54.876c-4.52 7.757-7.11 16.78-7.11 26.404c0 18.222 9.273 34.297 23.365 43.716a52.3 52.3 0 0 1-23.79-6.57q-.004.33-.003.661c0 25.447 18.104 46.675 42.13 51.5a52.6 52.6 0 0 1-23.718.9c6.683 20.866 26.08 36.05 49.062 36.475c-17.975 14.086-40.622 22.483-65.228 22.483c-4.24 0-8.42-.249-12.529-.734c23.243 14.902 50.85 23.597 80.51 23.597c96.607 0 149.434-80.031 149.434-149.435q0-3.417-.152-6.795A106.8 106.8 0 0 0 256 25.45"/>
-            </svg>
-            <svg class="w-8 h-8 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-                <path fill="#0a66c2"
-                      d="M218.123 218.127h-37.931v-59.403c0-14.165-.253-32.4-19.728-32.4c-19.756 0-22.779 15.434-22.779 31.369v60.43h-37.93V95.967h36.413v16.694h.51a39.91 39.91 0 0 1 35.928-19.733c38.445 0 45.533 25.288 45.533 58.186zM56.955 79.27c-12.157.002-22.014-9.852-22.016-22.009s9.851-22.014 22.008-22.016c12.157-.003 22.014 9.851 22.016 22.008A22.013 22.013 0 0 1 56.955 79.27m18.966 138.858H37.95V95.967h37.97zM237.033.018H18.89C8.58-.098.125 8.161-.001 18.471v219.053c.122 10.315 8.576 18.582 18.89 18.474h218.144c10.336.128 18.823-8.139 18.966-18.474V18.454c-.147-10.33-8.635-18.588-18.966-18.453"/>
-            </svg>
-            <svg class="w-8 h-8 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 258">
-                <defs>
-                    <linearGradient id="logosWhatsappIcon0" x1="50%" x2="50%" y1="100%" y2="0%">
-                        <stop offset="0%" stop-color="#1faf38"/>
-                        <stop offset="100%" stop-color="#60d669"/>
-                    </linearGradient>
-                    <linearGradient id="logosWhatsappIcon1" x1="50%" x2="50%" y1="100%" y2="0%">
-                        <stop offset="0%" stop-color="#f9f9f9"/>
-                        <stop offset="100%" stop-color="#fff"/>
-                    </linearGradient>
-                </defs>
-                <path fill="url(#logosWhatsappIcon0)"
-                      d="M5.463 127.456c-.006 21.677 5.658 42.843 16.428 61.499L4.433 252.697l65.232-17.104a123 123 0 0 0 58.8 14.97h.054c67.815 0 123.018-55.183 123.047-123.01c.013-32.867-12.775-63.773-36.009-87.025c-23.23-23.25-54.125-36.061-87.043-36.076c-67.823 0-123.022 55.18-123.05 123.004"/>
-                <path fill="url(#logosWhatsappIcon1)"
-                      d="M1.07 127.416c-.007 22.457 5.86 44.38 17.014 63.704L0 257.147l67.571-17.717c18.618 10.151 39.58 15.503 60.91 15.511h.055c70.248 0 127.434-57.168 127.464-127.423c.012-34.048-13.236-66.065-37.3-90.15C194.633 13.286 162.633.014 128.536 0C58.276 0 1.099 57.16 1.071 127.416m40.24 60.376l-2.523-4.005c-10.606-16.864-16.204-36.352-16.196-56.363C22.614 69.029 70.138 21.52 128.576 21.52c28.3.012 54.896 11.044 74.9 31.06c20.003 20.018 31.01 46.628 31.003 74.93c-.026 58.395-47.551 105.91-105.943 105.91h-.042c-19.013-.01-37.66-5.116-53.922-14.765l-3.87-2.295l-40.098 10.513z"/>
-                <path fill="#fff"
-                      d="M96.678 74.148c-2.386-5.303-4.897-5.41-7.166-5.503c-1.858-.08-3.982-.074-6.104-.074c-2.124 0-5.575.799-8.492 3.984c-2.92 3.188-11.148 10.892-11.148 26.561s11.413 30.813 13.004 32.94c1.593 2.123 22.033 35.307 54.405 48.073c26.904 10.609 32.379 8.499 38.218 7.967c5.84-.53 18.844-7.702 21.497-15.139c2.655-7.436 2.655-13.81 1.859-15.142c-.796-1.327-2.92-2.124-6.105-3.716s-18.844-9.298-21.763-10.361c-2.92-1.062-5.043-1.592-7.167 1.597c-2.124 3.184-8.223 10.356-10.082 12.48c-1.857 2.129-3.716 2.394-6.9.801c-3.187-1.598-13.444-4.957-25.613-15.806c-9.468-8.442-15.86-18.867-17.718-22.056c-1.858-3.184-.199-4.91 1.398-6.497c1.431-1.427 3.186-3.719 4.78-5.578c1.588-1.86 2.118-3.187 3.18-5.311c1.063-2.126.531-3.986-.264-5.579c-.798-1.593-6.987-17.343-9.819-23.64"/>
+            <svg
+                    class="xIcon h-[70%] p-1 cursor-pointer  stroke-darkBlue rounded-full hover:bg-darkBlue hover:stroke-white hide"
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path fill="none" stroke-width="1.2" d="m7 7l10 10M7 17L17 7"/>
             </svg>
         </div>
-    </div>
-</div>
-<nav class=" flex w-full relative overflow-x-clip justify-between px-6 h-[50px] sm:h-[70px] md:h-[80px] lg:h-[94px] border-b-2 border-[#5892B7]">
-    <div class="w-1/3 sm:w-2/4 md:w-1/3 flex justify-start items-center">
-        <img src="{{asset('images/logo1.png')}}" alt="..." class="h-[80%]">
-    </div>
-    <div class="w-full h-full hidden md:flex justify-between">
         <div
-                class="w-full mx-3 max-w-[450px]  text-[#435B76] text-[20px] font-bold flex justify-around items-center">
-            <div class="flex flex-col justify-center items-center cursor-pointer group hover:text-darkBlue">
-                <a href="#home">{{trans('site.home')}}</a>
-                <span class="w-0 h-[2px] bg-darkBlue duration-300 group-hover:w-full"></span>
-            </div>
-            <div class="flex flex-col justify-center items-center cursor-pointer group hover:text-darkBlue">
-                <a href="#blog">Blog</a>
-                <span class="w-0 h-[2px] bg-darkBlue duration-300 group-hover:w-full"></span>
-            </div>
-            <div class="flex flex-col justify-center items-center cursor-pointer group hover:text-darkBlue">
-                <a href="#cases">Cases</a>
-                <span class="w-0 h-[2px] bg-darkBlue duration-300 group-hover:w-full"></span>
-            </div>
-            <div class="flex flex-col justify-center items-center cursor-pointer group hover:text-darkBlue">
-                <a href="#contact">Contact</a>
-                <span class="w-0 h-[2px] bg-darkBlue duration-300 group-hover:w-full"></span>
-            </div>
-        </div>
-        <div class=" flex justify-end items-center ">
-            <div class=" flex gap-2 cursor-pointer relative">
-                <div class="btnLang absolute w-full h-full top-0 left-0 z-20 "></div>
-                @if($locale == 'en')
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" class="w-12 h-6 rounded-2xl">
+                class="absolute lang right-0 top-[102%]  bg-white p-4 z-40 shadow-md hideLang  duration-300 flex flex-col gap-2">
+            <div class="flex gap-2 hover:bg-whiteBlue hover:text-white cursor-pointer p-2 rounded-md ">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" class="w-12 h-6">
                     <path fill="#bd3d44" d="M0 0h640v480H0"/>
                     <path stroke="#fff" stroke-width="37"
                           d="M0 55.3h640M0 129h640M0 203h640M0 277h640M0 351h640M0 425h640"/>
@@ -133,8 +164,28 @@ $lang = false;
                     <path fill="none" marker-mid="url(#flagUs4x30)"
                           d="m0 0l16 11h61h61h61h61h60L47 37h61h61h60h61L16 63h61h61h61h61h60L47 89h61h61h60h61L16 115h61h61h61h61h60L47 141h61h61h60h61L16 166h61h61h61h61h60L47 192h61h61h60h61L16 218h61h61h61h61h60z"/>
                 </svg>
-                @elseif($locale == 'ar')
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-6 rounded-2xl" viewBox="0 0 640 480">
+                <h5>English</h5>
+            </div>
+            <div class="flex gap-2 hover:bg-whiteBlue hover:text-white cursor-pointer p-2 rounded-md">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-6" viewBox="0 0 640 480">
+                    <defs>
+                        <path id="flagCn4x30" fill="#ff0" d="M-.6.8L0-1L.6.8L-1-.3h2z"/>
+                    </defs>
+                    <path fill="#ee1c25" d="M0 0h640v480H0z"/>
+                    <use width="30" height="20" href="#flagCn4x30" transform="matrix(71.9991 0 0 72 120 120)"/>
+                    <use width="30" height="20" href="#flagCn4x30"
+                         transform="matrix(-12.33562 -20.5871 20.58684 -12.33577 240.3 48)"/>
+                    <use width="30" height="20" href="#flagCn4x30"
+                         transform="matrix(-3.38573 -23.75998 23.75968 -3.38578 288 95.8)"/>
+                    <use width="30" height="20" href="#flagCn4x30"
+                         transform="matrix(6.5991 -23.0749 23.0746 6.59919 288 168)"/>
+                    <use width="30" height="20" href="#flagCn4x30"
+                         transform="matrix(14.9991 -18.73557 18.73533 14.99929 240 216)"/>
+                </svg>
+                <h5>China</h5>
+            </div>
+            <div class="flex gap-2 hover:bg-whiteBlue hover:text-white cursor-pointer p-2 rounded-md">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-6" viewBox="0 0 640 480">
                     <defs>
                         <clipPath id="flagSa4x30">
                             <path fill-opacity="0.7" d="M-85.3 0h682.6v512H-85.3z"/>
@@ -144,8 +195,7 @@ $lang = false;
                         <path fill="#165d31" d="M-128 0h768v512h-768z"/>
                         <path fill="#fff"
                               d="M65.5 145.1c-.8 12-2 33 8.3 35.2c12.3 1.2 5.5-20.8 10-24.8c.8-2 2.3-2 2.4.5v18.7c0 6 4 7.8 7 9c3.2-.2 5.4 0 6.6 3l1.6 32.3s7.4 2.2 7.8-18.1c.3-12-2.4-21.9-.8-24.2c0-2.3 3-2.4 5-1.3c3.2 2.2 4.6 5 9.6 4c7.6-2.2 12.2-5.9 12.3-11.7a47 47 0 0 0-3.5-16.6c.4-1-1.4-3.7-1-4.7c1.3 2.2 3.4 2 3.8 0c-1.3-4.2-3.3-8.3-6.5-10c-2.7-2.4-6.7-2-8 3c-.8 5.7 2 12.4 6.1 18c.9 2.1 2.1 5.7 1.6 8.9c-2.2 1.3-4.4.7-6.3-1.2c0 0-6-4.5-6-5.6c1.6-10.2.3-11.4-.6-14.3c-.6-3.9-2.5-5.2-4-7.8c-1.5-1.6-3.5-1.6-4.5 0c-2.7 4.6-1.4 14.5.5 19c1.4 4.1 3.5 6.7 2.5 6.7c-.8 2.3-2.5 1.7-3.8-1a66.6 66.6 0 0 1-2.1-17.4c-.5-4.6-1.1-14.4-4.2-17c-1.8-2.4-4.5-1.2-5.5 1a82.4 82.4 0 0 0 .3 13.4c2 7.4 2.7 14 3.7 21.5c.3 10.1-5.8 4.4-5.5-.7a45 45 0 0 0-.3-19.4c-1-2.6-2.1-3.2-4.6-2.8c-1.9 0-6.8 5.3-8.2 14.3c0 0-1.2 4.6-1.7 8.7c-.7 4.6-3.7 8-5.9-.6c-1.8-6.3-3-21.6-6-18z"/>
-                        <path fill="#fff"
-                              d="m99 194.2l-32 15.4c.3-7.3 15.1-20.4 25.3-20.5c6.5.1 4.9 2.5 6.6 5.1z"/>
+                        <path fill="#fff" d="m99 194.2l-32 15.4c.3-7.3 15.1-20.4 25.3-20.5c6.5.1 4.9 2.5 6.6 5.1z"/>
                         <path fill="#fff"
                               d="M93.3 204.2c-16.8 43.5 39.5 49.6 45.8 1.8c.6-2 3-3.9 3.4-.7c-1.3 43.3-43.6 46.2-50.8 32.6a41.9 41.9 0 0 1-2.5-14.6c-1-8.5-5.5-5.2-6.2 3.2c-.7 4.7-.5 6-.5 10.5c2.2 34.2 56.7 19.5 65.6-8.7c4.7-15.6-.8-27.1 1.7-27.1c5.4 5.8 13 .8 14.7-1.2c.7-1 2.5-1.7 3.7-.4c4.2 3 11.6 1.6 13.2-3.7c.9-5.3 1.6-10.7 1.8-16.2c-3.5 1-6 1.7-6.3 3.2l-.7 4.6c-.3 1.5-3.2 1.5-3.4-.4c-1.3-6-6.7-6.7-10 2.5c-2.1 1.8-6.1 2.2-6.5-.5c.5-6.2-2-7-7-4.1l-4.8-36.2c2 0 4 1.5 5.9-.9c-2-6.5-6.5-19.7-9-20.7c-1.1-1.4-2.1-.5-3.7-.1c-2.6.8-5 3-4.2 7.4c3 18.8 5 33.1 8.1 52c.5 2.1-1.3 5-3.7 4.7c-4-2.7-5-8.2-12-8c-5 0-10.6 5.5-11.3 10.7c-.9 4.2-1.2 8.7 0 12.3c3.5 4.2 7.7 3.8 11.4 2.9c3-1.3 5.5-4.3 6.6-3.6c.7.9.1 10.9-14.3 18.5c-8.7 4-15.7 4.8-19.4-2.3c-2.3-4.5.2-21.4-5.6-17.5"/>
                         <path fill="#fff"
@@ -174,571 +224,451 @@ $lang = false;
                               d="M268.1 189.7c-.5 1-2.3 1-4 0s-2.7-2.6-2.1-3.5s2.3-.9 4 0s2.6 2.6 2.1 3.5m-89-53.6c-1 .3-2.4-.6-3-2s-.3-2.6.7-2.9s2.3.7 3 2s.3 2.7-.8 3zM355.2 375c9.4.4 18.2 0 27.5.5c1.7 1.5.5 5-.6 4.8l-7.8-.3c-.1-3-7.7-2.5-7.5.1c-4.1.5-7.8-.1-12-.3c-1.2-1.5-1-4.2.4-4.8"/>
                     </g>
                 </svg>
-                @elseif($locale == 'ch')
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-6 rounded-2xl" viewBox="0 0 640 480">
-                    <defs>
-                        <path id="flagCn4x30" fill="#ff0" d="M-.6.8L0-1L.6.8L-1-.3h2z"/>
-                    </defs>
-                    <path fill="#ee1c25" d="M0 0h640v480H0z"/>
-                    <use width="30" height="20" href="#flagCn4x30" transform="matrix(71.9991 0 0 72 120 120)"/>
-                    <use width="30" height="20" href="#flagCn4x30"
-                         transform="matrix(-12.33562 -20.5871 20.58684 -12.33577 240.3 48)"/>
-                    <use width="30" height="20" href="#flagCn4x30"
-                         transform="matrix(-3.38573 -23.75998 23.75968 -3.38578 288 95.8)"/>
-                    <use width="30" height="20" href="#flagCn4x30"
-                         transform="matrix(6.5991 -23.0749 23.0746 6.59919 288 168)"/>
-                    <use width="30" height="20" href="#flagCn4x30"
-                         transform="matrix(14.9991 -18.73557 18.73533 14.99929 240 216)"/>
-                </svg>
-                @elseif($locale == 'ge')
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-6 rounded-2xl" viewBox="0 0 640 480">
+                <h5>Arabic</h5>
+            </div>
+            <div class="flex gap-2 hover:bg-whiteBlue hover:text-white cursor-pointer p-2 rounded-md">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-6" viewBox="0 0 640 480">
                     <path fill="#fc0" d="M0 320h640v160H0z"/>
                     <path fill="#000001" d="M0 0h640v160H0z"/>
                     <path fill="#f00" d="M0 160h640v160H0z"/>
                 </svg>
-                @endif
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-7 h-7 duration-300 chevron">
-                    <path fill="#0e7bc0" fill-rule="evenodd"
-                          d="M4.293 7.793a1 1 0 0 1 1.414 0L12 14.086l6.293-6.293a1 1 0 1 1 1.414 1.414L13.414 15.5a2 2 0 0 1-2.828 0L4.293 9.207a1 1 0 0 1 0-1.414"
-                          clip-rule="evenodd"/>
-                </svg>
+                <h5>Germany</h5>
             </div>
         </div>
-    </div>
-    <div class="w-1/4 md:hidden flex justify-end items-center ">
-        <svg
-                class="menuIcon h-[70%] p-1 cursor-pointer stroke-darkBlue rounded-full hover:bg-darkBlue hover:stroke-white"
-                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"
-                  d="M12 17h7M5 12h14M5 7h14"/>
-        </svg>
-        <svg
-                class="xIcon h-[70%] p-1 cursor-pointer  stroke-darkBlue rounded-full hover:bg-darkBlue hover:stroke-white hide"
-                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path fill="none" stroke-width="1.2" d="m7 7l10 10M7 17L17 7"/>
-        </svg>
-    </div>
-    <div
-            class="absolute lang right-0 top-[102%]  bg-white p-4 z-40 shadow-md hideLang  duration-300 flex flex-col gap-2">
-        <div class="flex gap-2 hover:bg-whiteBlue hover:text-white cursor-pointer p-2 rounded-md ">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" class="w-12 h-6">
-                <path fill="#bd3d44" d="M0 0h640v480H0"/>
-                <path stroke="#fff" stroke-width="37"
-                      d="M0 55.3h640M0 129h640M0 203h640M0 277h640M0 351h640M0 425h640"/>
-                <path fill="#192f5d" d="M0 0h364.8v258.5H0"/>
-                <marker id="flagUs4x30" markerHeight="30" markerWidth="30">
-                    <path fill="#fff" d="m14 0l9 27L0 10h28L5 27z"/>
-                </marker>
-                <path fill="none" marker-mid="url(#flagUs4x30)"
-                      d="m0 0l16 11h61h61h61h61h60L47 37h61h61h60h61L16 63h61h61h61h61h60L47 89h61h61h60h61L16 115h61h61h61h61h60L47 141h61h61h60h61L16 166h61h61h61h61h60L47 192h61h61h60h61L16 218h61h61h61h61h60z"/>
-            </svg>
-            <h5>English</h5>
-        </div>
-        <div class="flex gap-2 hover:bg-whiteBlue hover:text-white cursor-pointer p-2 rounded-md">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-6" viewBox="0 0 640 480">
-                <defs>
-                    <path id="flagCn4x30" fill="#ff0" d="M-.6.8L0-1L.6.8L-1-.3h2z"/>
-                </defs>
-                <path fill="#ee1c25" d="M0 0h640v480H0z"/>
-                <use width="30" height="20" href="#flagCn4x30" transform="matrix(71.9991 0 0 72 120 120)"/>
-                <use width="30" height="20" href="#flagCn4x30"
-                     transform="matrix(-12.33562 -20.5871 20.58684 -12.33577 240.3 48)"/>
-                <use width="30" height="20" href="#flagCn4x30"
-                     transform="matrix(-3.38573 -23.75998 23.75968 -3.38578 288 95.8)"/>
-                <use width="30" height="20" href="#flagCn4x30"
-                     transform="matrix(6.5991 -23.0749 23.0746 6.59919 288 168)"/>
-                <use width="30" height="20" href="#flagCn4x30"
-                     transform="matrix(14.9991 -18.73557 18.73533 14.99929 240 216)"/>
-            </svg>
-            <h5>China</h5>
-        </div>
-        <div class="flex gap-2 hover:bg-whiteBlue hover:text-white cursor-pointer p-2 rounded-md">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-6" viewBox="0 0 640 480">
-                <defs>
-                    <clipPath id="flagSa4x30">
-                        <path fill-opacity="0.7" d="M-85.3 0h682.6v512H-85.3z"/>
-                    </clipPath>
-                </defs>
-                <g fill-rule="evenodd" clip-path="url(#flagSa4x30)" transform="translate(80)scale(.9375)">
-                    <path fill="#165d31" d="M-128 0h768v512h-768z"/>
-                    <path fill="#fff"
-                          d="M65.5 145.1c-.8 12-2 33 8.3 35.2c12.3 1.2 5.5-20.8 10-24.8c.8-2 2.3-2 2.4.5v18.7c0 6 4 7.8 7 9c3.2-.2 5.4 0 6.6 3l1.6 32.3s7.4 2.2 7.8-18.1c.3-12-2.4-21.9-.8-24.2c0-2.3 3-2.4 5-1.3c3.2 2.2 4.6 5 9.6 4c7.6-2.2 12.2-5.9 12.3-11.7a47 47 0 0 0-3.5-16.6c.4-1-1.4-3.7-1-4.7c1.3 2.2 3.4 2 3.8 0c-1.3-4.2-3.3-8.3-6.5-10c-2.7-2.4-6.7-2-8 3c-.8 5.7 2 12.4 6.1 18c.9 2.1 2.1 5.7 1.6 8.9c-2.2 1.3-4.4.7-6.3-1.2c0 0-6-4.5-6-5.6c1.6-10.2.3-11.4-.6-14.3c-.6-3.9-2.5-5.2-4-7.8c-1.5-1.6-3.5-1.6-4.5 0c-2.7 4.6-1.4 14.5.5 19c1.4 4.1 3.5 6.7 2.5 6.7c-.8 2.3-2.5 1.7-3.8-1a66.6 66.6 0 0 1-2.1-17.4c-.5-4.6-1.1-14.4-4.2-17c-1.8-2.4-4.5-1.2-5.5 1a82.4 82.4 0 0 0 .3 13.4c2 7.4 2.7 14 3.7 21.5c.3 10.1-5.8 4.4-5.5-.7a45 45 0 0 0-.3-19.4c-1-2.6-2.1-3.2-4.6-2.8c-1.9 0-6.8 5.3-8.2 14.3c0 0-1.2 4.6-1.7 8.7c-.7 4.6-3.7 8-5.9-.6c-1.8-6.3-3-21.6-6-18z"/>
-                    <path fill="#fff" d="m99 194.2l-32 15.4c.3-7.3 15.1-20.4 25.3-20.5c6.5.1 4.9 2.5 6.6 5.1z"/>
-                    <path fill="#fff"
-                          d="M93.3 204.2c-16.8 43.5 39.5 49.6 45.8 1.8c.6-2 3-3.9 3.4-.7c-1.3 43.3-43.6 46.2-50.8 32.6a41.9 41.9 0 0 1-2.5-14.6c-1-8.5-5.5-5.2-6.2 3.2c-.7 4.7-.5 6-.5 10.5c2.2 34.2 56.7 19.5 65.6-8.7c4.7-15.6-.8-27.1 1.7-27.1c5.4 5.8 13 .8 14.7-1.2c.7-1 2.5-1.7 3.7-.4c4.2 3 11.6 1.6 13.2-3.7c.9-5.3 1.6-10.7 1.8-16.2c-3.5 1-6 1.7-6.3 3.2l-.7 4.6c-.3 1.5-3.2 1.5-3.4-.4c-1.3-6-6.7-6.7-10 2.5c-2.1 1.8-6.1 2.2-6.5-.5c.5-6.2-2-7-7-4.1l-4.8-36.2c2 0 4 1.5 5.9-.9c-2-6.5-6.5-19.7-9-20.7c-1.1-1.4-2.1-.5-3.7-.1c-2.6.8-5 3-4.2 7.4c3 18.8 5 33.1 8.1 52c.5 2.1-1.3 5-3.7 4.7c-4-2.7-5-8.2-12-8c-5 0-10.6 5.5-11.3 10.7c-.9 4.2-1.2 8.7 0 12.3c3.5 4.2 7.7 3.8 11.4 2.9c3-1.3 5.5-4.3 6.6-3.6c.7.9.1 10.9-14.3 18.5c-8.7 4-15.7 4.8-19.4-2.3c-2.3-4.5.2-21.4-5.6-17.5"/>
-                    <path fill="#fff"
-                          d="M165 160c3.3-1.2 19.3-19.6 19.3-19.6l-2.4-2c-.9-.7-.8-1.5 0-2.2c4-2.4 2.7-7.4.7-9.8a9.7 9.7 0 0 0-8.7.1c-2.8 2.7-3.4 7-1.2 9.6c2.1 1 4.2 3.2 2.8 4.4c-6.6 7-24.5 19.1-22.4 19.5c.4.6 11.5.6 11.8 0zm-97 65c-6 9.6-6.5 23.9-3.2 28.2c1.8 2 4.7 2.9 6.8 2.2c3.8-1.6 5.5-9.3 4.6-12c-1.3-2-2.3-2.3-3.6-.7c-2.6 5.4-3.7 1.7-4-1.3a70 70 0 0 1 .8-15.2c.7-4.2 0-3-1.4-1.2m257.1-15.3c-5.8-12.6-13.9-25-16.4-29.7a558 558 0 0 0-24.8-36c-6.2-7.4 10.2 3.1-2-11.7l-8.9-7.5c-2-1.4-6.8-4-7.6.2c-.4 3.8-.2 5.8.4 8.9c.5 2 3.5 5.5 5 7.5a565 565 0 0 1 53.8 86.5c2.6-1.3 2-16.1.5-18.2"/>
-                    <path fill="#fff"
-                          d="M299.6 251.5c-1.2 1.3 2.8 6.8 8 6.8c8.6-1 16.2-5.8 23.2-18.6a33 33 0 0 0 5.3-14.2a317 317 0 0 0-5.8-72.4c-.3-2 0-4.4.2-5c.6-.7 2.5 0 3.5-1.7c1.5-1.5-4-14-7-18.7c-1-2.2-1.5-3.6-3.3.2a27 27 0 0 0-3 13.6c4.1 28.5 5.4 53.4 8 81.9c.3 2.8-.1 6.8-2 8.4a80.2 80.2 0 0 1-27.1 19.7m116.5-.1c-6.2 3.6-6.2 7.7-1.2 7.8c8.6-1 18.8-1.7 25.8-12.3a41 41 0 0 0 4.2-16a303 303 0 0 0-4.7-71.4c-.2-2-1.1-6.7-.8-7.3c.6-1.4 3.4.1 4.4-1.5c1.4-1.5-7.3-12.7-10.4-17.5c-1-2.2-1.4-3.6-3.3.2a22.3 22.3 0 0 0-1.8 13.6c4.6 31 8 54.2 8.7 81.6c-.4 2.6-.5 4-1.7 7.3c-2.7 3.4-5.7 7.8-8.5 9.9c-2.8 2-8.8 4-10.7 5.6"/>
-                    <path fill="#fff"
-                          d="M420.7 223.7c0-7.3.1-13.5-.1-19a34 34 0 0 0-3-13.5c-1.8-4.1-.7-7.4-1.6-11.8c-.8-4.4-.6-11-1.8-16.1c-.4-2-1.4-8.5-1.1-9.2c.5-1.4 2.4 0 3.4-1.6c1.4-1.5-5-18-8.2-22.7c-1.1-2.1-3.3-1.4-5.8 2c-2.5 2.3-1.6 7.4-.6 12.3c6.1 32.3 10.8 61.6 9.8 92.3c-.4 2.6 9-7.8 9-12.7m-45.7-40c-3.9-.2-12-7.7-14.4-12a8 8 0 0 1 .4-6.5c1.5-1 3.7-2 5.4-1c0 0 1.7 2.4 1.4 2.7c2 1 3 .5 3.2-.4c.1-1.5-.6-2.4-.6-4c.9-4.6 6-5.3 8-2.4c1.4 1.8 2 5.5 2.1 8c0 1.3-2-.2-3.3 0c-1.1.4-1.4 1.8-1.5 3c-.2 3.3-.6 8.6-.7 12.5zm-71.8 48c1-9.8-.4-27.3-.5-33.1A477 477 0 0 0 299 154c-1.2-8.4 3.4.9 2.8-4c-1.5-8.3-6.1-14-11.6-21.5c-1.7-2.5-1.7-3-4.4.6c-3 6.7-.4 11.4.4 16.7c3.9 17.2 6.2 33 7.3 48.7a393 393 0 0 1 .4 49c3 .1 7.6-4.7 9.3-11.8"/>
-                    <path fill="#fff"
-                          d="M434 216c-6.9-11.6-17.2-24-20-28.7a658 658 0 0 0-29.2-37.8c-8.5-9 4-1.5-1.6-8.5c-4.7-5.1-6-6.8-10.1-9.9c-2-1.3-3.2-3.8-4 .5a83 83 0 0 0-.2 11.2c0 1.7 1.8 5 3.4 7c20.7 25.5 43.4 51.5 61.6 84.2c2.6-1.3 1.7-16 0-18z"/>
-                    <path fill="#165d31"
-                          d="M122.6 194.7c-.5.9-1.6 2-1.2 3.1c.7 1 1.4 1.3 2.6 1.3c1.1 0 2.7.3 3-.3c.6-.7 1-2 .6-3.3c-1.2-3-4.4-1.8-5-.8"/>
-                    <path fill="#fff"
-                          d="M354.2 362.5c9.2.4 15.2.5 23.3 1.4l9.6-1c10.6-1 11 15.1 11 15.1c0 9.5-3.7 10-8.4 11c-2.7.4-4-1.6-5.5-3.6a14 14 0 0 1-7 .4c-3.9-.2-7.7-.2-11.5-.5c-4-.3-6.2.5-10.3.1c-.8 1.3-2 3.1-4.4 2.6c-2-.3-4.5-6-3.8-10.5c1.5-3.2 1-2.1 1-3.5c-37.6-1-75.5-2.7-112.3-2.2c-28.8.1-57.2 1.3-85.7 2.5c-15.2-.2-26.8-2.6-34.8-14.3c.8 0 38.8 2.1 49.9 1.4c20.5-.2 39.3-1.9 60.2-2.5c41.2.7 82.1.7 123.3 3.6c-4-2.7-4-9 2-10.6c.5-.4.8 3.1 1.7 3c4.9-.3 2.7 6.3 1.7 7.6M188.6 135.3c-6.2 17.8 3.6 37.4 10.4 35.5c5 2 8-7.4 10-17.6c1.5-2.9 2.5-3.2 3.2-1.7c-.2 13.6 1 16.7 4.5 20.8c7.8 6 14.3.8 14.8.3l6-6.1c1.4-1.5 3.2-1.5 5.1-.3c1.9 1.7 1.6 4.6 5.6 6.6c3.4 1.4 10.5.4 12.2-2.5c2.2-3.9 2.8-5.2 3.8-6.6c1.6-2.1 4.3-1.2 4.3-.5c-.3 1.2-1.9 2.3-.8 4.5c2 1.4 2.4.5 3.5.2c4-2 7-10.6 7-10.6c.1-3.2-1.7-3-2.9-2.2l-3.1 2.1c-2 .3-5.7 1.6-7.6-1.3c-1.9-3.4-1.9-8.3-3.3-11.8c0-.2-2.6-5.5-.2-5.8c1.2.2 3.7.9 4.1-1.2c1.2-2.1-2.6-8-5.3-11c-2.3-2.5-5.5-2.8-8.6-.2c-2.2 2-1.9 4.2-2.3 6.3a9.8 9.8 0 0 0 2 8.7c2.2 4.2 6.1 9.7 4.8 17.5c0 0-2.3 3.6-6.3 3.1c-1.7-.3-4.4-1-5.8-11.8c-1.1-8 .2-19.4-3.2-24.7c-1.3-3.3-2.2-6.4-5.2-.9c-.8 2.2-4.3 5.5-1.8 12.2a36 36 0 0 1 2 19c-1.5 2.2-1.8 2.9-3.7 5c-2.6 3-5.5 2.2-7.7 1.1c-2-1.3-3.6-2-4.6-6.5c.2-7 .6-18.5-.7-20.9c-1.9-3.8-5-2.4-6.3-1.2a47.7 47.7 0 0 0-11.5 23.5c-1.8 5.8-3.7 4.1-5 1.8c-3.2-3-3.5-26.7-7.4-22.8"/>
-                    <path fill="#fff"
-                          d="M207.4 174.1c2.9-2 1.6-3.4 5.8.8a72 72 0 0 1 9.2 31.3c-.2 2.6 1.6 4.2 2.5 3.6c.4-6 15.1-14.4 28.6-15.6c2-.5 1-4.4 1.3-6.4c-.8-7.5 4.2-14.3 11.2-14.8c9.6 1.4 12.8 6.5 13 14.2c-1.1 15-16.7 17.5-25.4 18.7c-1.3.5-1.9 1.1 0 1.8l36.6.2l1.9 1c.2 1-.6.2-2 2.6a29.5 29.5 0 0 0-3.7 11.5c-10.9 3.6-22.2 5-33.6 6.5c-4 2-6 4.7-5.2 7.7c1.4 3.3 10.2 6.7 10.2 6.8c1.7 1 3.6 3.5-.5 8.6c-17.8-.8-31.7-8.4-36.5-19.1c-1.4-1.1-3 0-4 1.4c-7 9-13.8 17-25.7 21.4c-7 1.8-14.3-1.1-17.7-5.7c-2.3-2.7-2.2-5.6-3-6.2c-3.9 1.7-36.9 15.7-32.7 9.1c8-8.5 22-14.9 34.2-23.3c.9-2.9 2.5-12.5 7.3-15.6c.3 0-.7 5.6-.6 8c0 2-.2 2.7.2 2.2c.9-.5 15.7-12.2 17-15.8c1.4-2 .3-7.2.3-7.4c-2.8-7.2-6.7-7.8-8.1-11.4c-1.3-4.7-.7-10.1 2-11.7c2.4-2.1 5.2-1.9 7.9.5c3 2.7 5.6 8 6.4 11.9c-.5 1.5-4-1-5-.3a16 16 0 0 1 3.7 7.8c2 8.2 1.4 11.4-.6 16.7c-6.6 13.9-15 18-22.4 23.2c-.2 0-.3 3.5 2.4 5.4c1 1 4.9 1.5 9.4 0a54.5 54.5 0 0 0 22.3-23.3a51 51 0 0 0-2.4-22.2c-2.9-6.7-6.3-16.2-6.3-16.4c-.1-4.2.2-5.6 2-7.7m-95.8-38.6c4.2 2 12.2 1.1 11.8-5.7l-.2-3.1c-.8-2-3.2-1.5-3.7.5c-.2.7.3 1.8-.3 2.1c-.4.4-1.7.2-1.7-1.7c0-.6-.4-1.2-.7-1.6c-.2-.2-.4-.2-.9-.2c-.6 0-.6.1-.9.6c-.1.5-.3 1-.3 1.6c0 .7-.4.9-.8 1c-.6 0-.5 0-1-.2c-.2-.3-.5-.4-.5-1l-.3-1.6c-.2-.3-.6-.5-1-.6c-2.3 0-2.5 2.7-2.3 3.7c-.2.2-.3 4.9 2.8 6.2"/>
-                    <path fill="#fff"
-                          d="M235.1 187.7c4.2 2 14.3.9 11.8-5.6l-.2-3.2c-.9-2-3.2-1.5-3.7.6c-.2.6.3 1.7-.4 2c-.3.4-1.7.2-1.6-1.6c0-.6-.4-1.3-.7-1.7c-.3-.1-.4-.2-1-.2c-.5 0-.5.2-.8.7c-.2.5-.3 1-.3 1.6c-.1.6-.4.8-.9 1c-.5 0-.4 0-.8-.3c-.3-.3-.6-.4-.6-.9l-.3-1.6c-.2-.3-.6-.5-1-.6c-2.3 0-2.5 2.6-2.4 3.6c-.1.2-.2 5 3 6.2zm72-21.6c4.2 2 12.1 1.1 11.8-5.6l-.2-3.2c-.9-2-3.2-1.5-3.7.5c-.2.7.3 1.8-.4 2.2c-.3.3-1.7.1-1.6-1.8c0-.6-.4-1.2-.7-1.6c-.3-.2-.4-.2-1-.2c-.5 0-.5.2-.8.7l-.3 1.5c-.1.7-.4 1-.9 1s-.4 0-.8-.2c-.3-.3-.6-.4-.6-.9s-.1-1.3-.3-1.7c-.2-.3-.6-.4-1-.5c-2.3 0-2.5 2.6-2.4 3.6c-.1.2-.2 4.9 3 6.2zm37.3 54.3c-7.3 8.3-4.1 22-2.4 25c2.4 4.8 4.3 7.9 9 10.3c4.3 3.1 7.7 1.2 9.5-1c4.3-4.5 4.4-16 6.4-18.2c1.4-4.2 5-3.5 6.7-1.6a16.5 16.5 0 0 0 6.2 5.3c4 3.5 8.8 4.2 13.6 1c3.2-1.9 5.3-4.2 7.2-8.9c2-5.6 1-31.6.5-47l-4.2-21.5c0-.2-.5-10.2-1-12.5c0-1-.3-1.3.7-1.2c1.1 1 1.2 1 2 1.3c1 .2 2-1.7 1.3-3.3l-10-18.6c-.8-.8-1.9-1.6-3.2.2a7.3 7.3 0 0 0-2.4 5.5c.3 4.4 1 8.9 1.3 13.3l4 22.6c1.3 16 1.6 29.2 2.9 45.3c-.2 6.8-2.3 12.7-4.3 13.6c0 0-3 1.7-5-.2c-1.5-.6-7.4-9.9-7.4-9.9c-3-2.7-5-2-7.1 0c-6 5.8-8.6 16.4-12.7 23.8c-1 1.7-4 3-7.2-.1c-8.2-11.3-3.4-27.3-4.4-23.2M309 126.7c3.8 1.5 6.4 9.2 5.6 13c-.8 4.5-2.8 9.5-4.2 8.9c-1.6-.6 1-4.6-.5-8.8c-.8-2.8-6-7.8-5.4-9.2c-1-3.1 2.2-4.5 4.5-4z"/>
-                    <path fill="#fff"
-                          d="M356.6 225c.7-9.2-.6-14.8-.8-20.2s-6.1-46.6-7.3-50.6c-1.5-7.8 5.7-1 4.9-5.6c-2.5-5.6-8.6-13.9-10.5-18.8c-1.2-2-.7-4-3.3-.5a42.3 42.3 0 0 0-2.3 19.2c6.2 32.3 12.5 59.1 11.5 89.8c3 0 6.3-6.7 7.8-13.3m64.4-85.3c3.5 1.7 5.5 11.3 5.1 14c-.7 5-2.5 10.4-3.8 9.7c-1.5-.6.3-7.4-.4-9.5c-.8-3-5.5-8.4-5-10c-1-3.4 2-4.8 4.1-4.2m-255.7 67.9c3.3 1.3 5.3 8.3 5 10.3c-.8 3.7-2.5 7.7-3.8 7.1c-1.3-.4.3-5.4-.3-7c-.3-3.7-4.9-5.7-4.8-7.3c-.8-3 2-3.5 4-3.1z"/>
-                    <path fill="#165d31"
-                          d="M244.9 218.2c4.2.2 6.3 3.6 2.4 5c-4 1.3-7.7 2.4-7.8 8c1.5 8-2 5.2-4 4.2c-2.4-1.8-9.2-6-10.2-15c-.1-2.1 1.6-4 4.3-4c4 1.1 10 1.2 15.3 1.8"/>
-                    <path fill="#fff"
-                          d="M77.4 124.4c4.8 1.4 5.1 8.6 4.8 10.7c-.7 3.8-2.4 7.9-3.6 7.4c-1.4-.5 0-5.7-.7-7.3c-.7-2.2-4.8-6.4-4.4-7.6c-.9-2.5 2-3.7 3.9-3.2m95.9 33.6c-3.8 2-5.2 8-2.9 11.6c2.2 3 5.6 1.9 6 1.9c3.7.4 5.9-6.9 5.9-6.9s.1-2-4.2 1.9c-1.9.3-2-.4-2.5-1.4a9 9 0 0 1 .5-5.7c.7-1.8-.7-2.6-2.8-1.4m28-36.4c-2 1.3-5.7 5.2-5.8 9.6c-.1 2.5-.6 2.5 1 4c1.3 1.8 2.4 1.7 4.8.4a5.1 5.1 0 0 0 2.3-3.4c.6-2.8-3 1.4-3.4-1.8c-.8-3 1.5-4.2 3.7-7c0-2 0-3.3-2.7-1.8zm22.4 4a59.5 59.5 0 0 0-1.6 11.1c-.6 2.8 3 4 4.5.4c2.4-6.5 2.4-9.3 2.6-12c-.7-4.3-3.6-4.2-5.5.5m142 72.3c.4-.5 20-14.4 20-14.4c2-.7 1.5 7.2.6 7.1a77.8 77.8 0 0 1-20.7 14.3c-1 .7-1.9-5.3 0-7zm17.7-.2c3.5 1.7 4.9 11.8 4.5 14.5c0 5.4-3.3 9.6-4.7 9c-1.4-.7.2-6.7-.5-8.8c-.8-3-3.7-8.5-3.2-10.1c-1-3.4 1.8-5.2 4-4.6zm-116 43.4a26 26 0 0 1 5.6-4.9c2-1 3.8.8 3.7.7c.3 2-1.2 3.7-.7 6.3c.4 1 .7 2.2 2.6 1.8c3.1-2.5 6-2.7 9-2.8c2.5.1 2.6 4.2 1 4.2c-5.7 1.2-8.2 2.8-12.3 4.3c-2 1.2-3.6-.3-3.6-.4s-1.1-1.1-.4-3.7c.2-2-.6-3.2-2.4-3c-1.2.8-2.4 1.2-3-.3c-.3-1-.4-1.6.5-2.2m136.6 5.4c.8 1 1.4 2-.1 3.8l-3.7 3.2c-.6 1-1 2.8 1 3.3c3.6 1 12-4.5 12-4.6c1.4-1 1-3 .8-3c-.8-.9-2.6-.3-3.8-.5c-.6 0-2.5-.2-1.6-2a11.4 11.4 0 0 0 1.6-2.9c.5-1.2 0-2-2-2.7c-2.1-.4-3-.2-5.3 0c-1.2.2-1.6.8-1.9 2.3c.1 2.3 1.5 2.2 3 3z"/>
-                    <path fill="#165d31"
-                          d="M268.1 189.7c-.5 1-2.3 1-4 0s-2.7-2.6-2.1-3.5s2.3-.9 4 0s2.6 2.6 2.1 3.5m-89-53.6c-1 .3-2.4-.6-3-2s-.3-2.6.7-2.9s2.3.7 3 2s.3 2.7-.8 3zM355.2 375c9.4.4 18.2 0 27.5.5c1.7 1.5.5 5-.6 4.8l-7.8-.3c-.1-3-7.7-2.5-7.5.1c-4.1.5-7.8-.1-12-.3c-1.2-1.5-1-4.2.4-4.8"/>
-                </g>
-            </svg>
-            <h5>Arabic</h5>
-        </div>
-        <div class="flex gap-2 hover:bg-whiteBlue hover:text-white cursor-pointer p-2 rounded-md">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-6" viewBox="0 0 640 480">
-                <path fill="#fc0" d="M0 320h640v160H0z"/>
-                <path fill="#000001" d="M0 0h640v160H0z"/>
-                <path fill="#f00" d="M0 160h640v160H0z"/>
-            </svg>
-            <h5>Germany</h5>
-        </div>
-    </div>
-</nav>
-<div id="home" class=" mt-4 relative overflow-hidden h-auto w-full">
-    <div class="w-full h-full flex flex-row relative overflow-x-hidden">
-        <div class="w-[38%] slideInLeft flex justify-center items-center relative ">
-            <div class="flex flex-col gap-4 m-4 items-start">
-                <h2 class="text-[15px]  sm:text-[35px] lg:text-[50px]  font-bold text-darkBlue">
-                    Trusted Legal Solutions For Your Future
-                </h2>
-                <p class="text-[8px] sm:text-[12px] lg:text-[17px]">
-                    Law firms are typically structured with partners associates, And support staff Partners senior
-                    attorneys
-                </p>
-                <a href="#contact"
-                   class=" w-fit bg-[#5892B7] min-w-[150px] sm:min-w-[175px] px-1 py-2 sm:px-4 sm:py-3 sm:text-[17px] text-[8px] text-white hover:bg-darkBlue">
-                    Let’s Discuss Your Case
-                </a>
-            </div>
-        </div>
-        <div class="w-[62%] slideInRight relative ">
-            <div class="flex gap-2 sm:gap-4 lg:pr-10 justify-center lg:justify-end items-center h-full">
-                <img src="{{asset('images/photo1.jpg')}}" alt=".."
-                     class="w-[75px] sm:w-[130px] md:w-[150px] lg:w-[200px]  xl:w-[240px]  2xl:w-[280px] sm:h-[330px] md:h-[400px] lg:h-[600px] xl:h-[640px] 2xl:h-[680px]">
-                <img src="{{asset('images/photo2.jpg')}}" alt=".."
-                     class="w-[75px] sm:w-[130px] md:w-[150px] lg:w-[200px]  xl:w-[240px]  2xl:w-[280px] sm:h-[330px] md:h-[400px] lg:h-[600px] xl:h-[640px] 2xl:h-[680px] mb-6 sm:mb-12 lg:mb-20 2xl:mb-24">
-                <img src="{{asset('images/photo3.jpg')}}" alt=".."
-                     class="w-[75px] sm:w-[130px] md:w-[150px] lg:w-[200px]  xl:w-[240px]  2xl:w-[280px] sm:h-[330px] md:h-[400px] lg:h-[600px] xl:h-[640px] 2xl:h-[680px] mb-12 sm:mb-28 lg:mb-44  2xl:mb-48">
-
-            </div>
-        </div>
-    </div>
-</div>
-<div class="z-40  bg-whiteGray flex gap-4 my-4 justify-between relative overflow-x-hidden">
-    <div class=" hiddenDevLeft relative left-0 w-1/2 p-4 sm:p-12 flex flex-col gap-4 mb-4">
-        <h2 class="text-[13px]  sm:text-[32px] lg:text-[45px]  font-bold text-darkBlue">Responsible Business</h2>
-        <p class="text-[8px] sm:text-[12px] lg:text-[17px]">Addleshaw Goddard is committed to the ongoing journey of
-            having as positive an impact as possible on the world around us – just as we are committed to helping
-            our
-            clients with their journeys. Find out more about that commitment in action, covering diversity,
-            inclusion,
-            community activity, sustainability, and more.  </p>
-    </div>
-    <div class="hiddenDevRight  relative right-0 w-1/2 lg:w-[35%] h-auto p-5  gap-4">
-        <div class="w-full h-full relative flex justify-end flex-wrap md:items-start items-center">
-            <img src="{{asset('images/photo5.jpg')}}" alt=".."
-                 class="w-1/2 h-1/3 md:h-1/2 object-cover mb-4 md:mb-0">
-            <img src="{{asset('images/photo4.jpg')}}" alt=".."
-                 class="w-1/2 h-1/3 md:h-1/2 object-cover mb-4 md:mb-0 absolute z-20 bottom-[5%] left-[5%]">
-        </div>
-    </div>
-</div>
-<div class="w-full relative flex flex-col overflow-hidden">
-    <div class="text-darkBlue">
-        <h2 class="text-[13px] text-center sm:text-[32px] lg:text-[45px]  font-bold relative hiddenDevTop">News and
-            Insights</h2>
-        <div class="flex justify-end items-end mr-4  cursor-pointer relative hiddenDevRight">
-            <p class="text-[7px] md:text-[12px]">All Case Project</p>
-            <svg class="w-4 h-4 pt-1 md:pt-0 md:w-5 md:h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path fill="#0E7BC0" d="m12.192 16.827l2.406-4.327H2.5v-1h12.098l-2.406-4.327L19.788 12z"/>
-            </svg>
-        </div>
-    </div>
-    <div class="flex flex-wrap justify-around gap-3 my-4">
-        <div
-                class="relative hiddenDevButton w-[45%] h-[250px] md:w-[40%] md:h-[280px] lg:w-[20%] lg:h-[350px] flex flex-col bg-whiteGray cursor-pointer group duration-300">
-            <img class="w-full h-1/2 group-hover:p-4" src="{{asset('images/photo6.jpg')}}" alt="...">
-            <div class="w-full h-1/2 p-4 overflow-hidden">
-                <h4 class="text-[12px] sm:text-[17px] lg:text-[20px]">
-                    Addleshaw Goddard advises Seaya Andromeda on the acquisition of a majority
-                </h4>
-            </div>
-        </div>
-        <div
-                class="relative hiddenDevButton w-[45%] h-[250px] md:w-[40%] md:h-[280px] lg:w-[20%] lg:h-[350px] flex flex-col bg-whiteGray cursor-pointer group duration-300">
-            <img class="w-full h-1/2 group-hover:p-4" src="{{asset('images/photo7.jpg')}}" alt="...">
-            <div class="w-full h-1/2 p-4 overflow-hidden">
-                <h4 class="text-[12px] sm:text-[17px] lg:text-[20px]">
-                    The Paris International Arbitration Newsletter September 2024
-                </h4>
-            </div>
-        </div>
-        <div
-                class="relative hiddenDevButton w-[45%] h-[250px] md:w-[40%] md:h-[280px] lg:w-[20%] lg:h-[350px] flex flex-col bg-whiteGray cursor-pointer group duration-300">
-            <img class="w-full h-1/2 group-hover:p-4" src="{{asset('images/photo8.jpg')}}" alt="...">
-            <div class="w-full h-1/2 p-4 overflow-hidden">
-                <h4 class="text-[12px] sm:text-[17px] lg:text-[20px]">
-                    Addleshaw Goddard advises GED Capital on a capital increase to bring in strategic partners
-                </h4>
-            </div>
-        </div>
-        <div
-                class="relative hiddenDevButton w-[45%] h-[250px] md:w-[40%] md:h-[280px] lg:w-[20%] lg:h-[350px] flex flex-col bg-whiteGray cursor-pointer group duration-300">
-            <img class="w-full h-1/2 group-hover:p-4" src="{{asset('images/photo9.jpg')}}" alt="...">
-            <div class="w-full h-1/2 p-4 overflow-hidden">
-                <h4 class="text-[12px] sm:text-[17px] lg:text-[20px]">
-                    AG Ireland Launch Charity Partnership with Jigsaw
-                </h4>
-            </div>
-        </div>
-
-
-    </div>
-
-</div>
-<div id="cases" class="w-full bg-[#202636] p-12 md:p-20 flex flex-col text-white relative overflow-hidden">
-    <div class="flex w-full justify-between h-[33%] border-b-2 border-white pb-6">
-        <h2 class="text-[13px] text-center sm:text-[32px] lg:text-[45px]   font-bold relative ">Our Recent Case
-            Project</h2>
-        <div class="flex justify-end items-end mr-4 text-white cursor-pointer relative hiddenDevRight">
-            <p class="text-[7px] md:text-[12px]">All Case Project</p>
-            <svg class="w-4 h-4 pt-1 md:pt-0 md:w-5 md:h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path fill="#ffffff" d="m12.192 16.827l2.406-4.327H2.5v-1h12.098l-2.406-4.327L19.788 12z"/>
-            </svg>
-        </div>
-    </div>
-    <div class="flex w-full justify-between h-[19%] border-b-2 border-white py-6 items-center">
-        <h3 class="hiddenDevLeft w-[30%] md:w-1/3 text-[12px] text-center sm:text-[25px] lg:text-[30px]">Premier
-            Legal
-            Solutions :</h3>
-        <div class="flex w-[60%] md:w-1/3 items-center">
-            <p class="hiddenDevRight text-[8px]  sm:text-[13px] lg:text-[17px]">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s, when
-            </p>
-            <div
-                    class="hiddenDevRight p-1 md:p-2 lg:p-3 w-fit h-fit rounded-full bg-whiteBlue hover:bg-darkBlue cursor-pointer">
-                <svg class="w-5 h-5 lg:w-6 lg:h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path fill="#ffffff" d="m12.192 16.827l2.406-4.327H2.5v-1h12.098l-2.406-4.327L19.788 12z"/>
-                </svg>
-            </div>
-        </div>
-    </div>
-    <div class="flex w-full justify-between h-[19%] border-b-2 border-white py-6 items-center">
-        <h3 class="hiddenDevLeft w-[30%] md:w-1/3 text-[12px] text-center sm:text-[25px] lg:text-[30px]">Eminent Law
-            Group : :</h3>
-        <div class="flex w-[60%] md:w-1/3 items-center">
-            <p class="hiddenDevRight text-[8px]  sm:text-[13px] lg:text-[17px]">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s, when
-            </p>
-            <div
-                    class="hiddenDevRight p-1 md:p-2 lg:p-3 w-fit h-fit rounded-full bg-whiteBlue hover:bg-darkBlue cursor-pointer">
-                <svg class="w-5 h-5 lg:w-6 lg:h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path fill="#ffffff" d="m12.192 16.827l2.406-4.327H2.5v-1h12.098l-2.406-4.327L19.788 12z"/>
-                </svg>
-            </div>
-        </div>
-    </div>
-    <div class="flex w-full justify-between h-[19%] border-b-2 border-white py-6 items-center">
-        <h3 class="hiddenDevLeft w-[30%] md:w-1/3 text-[12px] text-center sm:text-[25px] lg:text-[30px]">Elite
-            Counsel
-            Attorneys : :</h3>
-        <div class="flex w-[60%] md:w-1/3 items-center">
-            <p class="hiddenDevRight text-[8px]  sm:text-[13px] lg:text-[17px]">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s, when
-            </p>
-            <div
-                    class="hiddenDevRight p-1 md:p-2 lg:p-3 w-fit h-fit rounded-full bg-whiteBlue hover:bg-darkBlue cursor-pointer">
-                <svg class="w-5 h-5 lg:w-6 lg:h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path fill="#ffffff" d="m12.192 16.827l2.406-4.327H2.5v-1h12.098l-2.406-4.327L19.788 12z"/>
-                </svg>
-            </div>
-        </div>
-    </div>
-
-</div>
-<div id="blog"
-     class="w-full flex flex-col p-12 md:p-20 justify-center items-center bg-whiteGray gap-6 relative overflow-hidden">
-    <h2 class="text-[13px] hiddenDevTop text-center sm:text-[32px] lg:text-[45px] text-darkBlue nanum relative w-1/2">
-        Our Goals & Achievements In Legal Practice</h2>
-    <p class="text-[8px]  hiddenDevButton sm:text-[13px] lg:text-[17px] w-2/3">Lorem Ipsum is simply dummy text of
-        the
-        printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s, whenLorem Ipsum is simply dummy text of the printing and
-        typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when </p>
-
-    <div class="relative w-3/4 h-fit max-w-[900px] max-h-[600px]">
-        <img class="w-full h-full " src="{{asset('images/photo10.jpg')}}" alt="...">
-        <div class="w-full h-full z-20 absolute top-0  bg-[#3B94CC] opacity-25 "></div>
-    </div>
-</div>
-<div class="relative overflow-hidden   justify-between flex lg:flex-row flex-col w-full h-auto md:h-[450px] mb-4">
-    <div class="absolute w-full h-full top-0">
-        <div class="absolute bg-[#080C40] opacity-80 z-20 w-full h-full"></div>
-        <img class="w-full h-full object-cover" src="{{asset('images/photo11.jpg')}}" alt="...">
-    </div>
-    <div class="lg:w-1/2 w-full  p-12 z-40 text-white flex flex-col gap-3 ">
-        <h2 class="hiddenDevLeft relative text-[15px] leading-[50px] sm:text-[35px] lg:text-[50px]  font-bold nanum">
-            How
-            Good Lawyers Win Cases</h2>
-        <p class="hiddenDevLeft relative text-[12px] sm:text-[17px] lg:text-[20px] nanum">Lorem Ipsum is simply
-            dummy
-            text of the printing and typesetting industry. Lorem Ipsum has been the
-            industry's standard dummy text ever since the 1500s, when </p>
-    </div>
-    <div class="flex hiddenDevRight relative lg:w-[40%] h-[110px] sm:h-full w-full flex-col justify-end z-40">
-        <div class="w-full bg-whiteBlue   flex items-center gap-3 p-5 h-3/4 lg:h-[33%]">
-            <div class="p-5 bg-[#202636] w-fit h-fit">
-                <p class="text-[15px] text-white sm:text-[30px] lg:text-[40px]">40+</p>
-            </div>
-            <h4 class="text-[15px]  sm:text-[30px] lg:text-[40px]">Years Experience</h4>
-        </div>
-    </div>
-</div>
-<div class="flex md:flex-row flex-col items-center justify-between my-4 md:max-h-[580px] overflow-hidden relative">
-    <div class="md:hiddenDevLeft md:w-[48%] w-full md:max-w-[650px] max-h-[540px] ">
-        <img src="{{asset('images/photo13.png')}}" alt="..." class="w-full h-full max-h-[540px] object-cover">
-    </div>
-    <div class=" h-auto w-1/3 hidden 3xl:block -scale-x-100	">
-        <img src="{{asset('images/photo12.png')}}" alt="..." class=" w-full h-full object-cover">
-    </div>
-    <div class="  md:w-[48%] w-full  max-w-[650px] h-full relative">
-        <div class="absolute top-0 right-0 h-full w-full 3xl:hidden">
-            <img src="{{asset('images/photo12.png')}}" alt="..." class="opacity-25 w-full h-full object-cover">
-        </div>
-
-        <div class="hiddenDevRight flex flex-col md:pr-5 p-6 gap-4 my-5 z-40">
-            <h2 class="text-[30px] leading-[50px] sm:text-[35px] lg:text-[50px]  font-bold nanum">Have Any Question
-                ?</h2>
-            <p class="text-[12px] sm:text-[17px] lg:text-[20px] nanum">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s, when an
-            </p>
-            <form class="w-full flex flex-col gap-5">
-                <div class="w-full flex justify-between">
-                    <input type="text"
-
-                           class="border-2 md:border-4 px-2 border-darkBlue placeholder-darkBlue w-[48%] text-[20px] md:text-[25px] transparent	"
-                           placeholder="Name ..">
-                    <input type="text"
-                           class="border-2 md:border-4 px-2 border-darkBlue placeholder-darkBlue w-[48%] text-[20px] md:text-[25px] transparent	"
-                           placeholder="Name ..">
-                </div>
-                <input type="text"
-                       class="border-2 md:border-4 px-2 border-darkBlue placeholder-darkBlue w-full text-[20px] md:text-[25px] transparent	"
-                       placeholder="Name ..">
-                <textarea type="text"
-                          class="border-2 md:border-4 p-2 border-darkBlue placeholder-darkBlue  text-[20px] md:text-[25px] transparent	"
-                          placeholder="Message ..."></textarea>
-                <button
-                        type="button"
-                        class=" w-fit bg-darkBlue min-w-[150px] sm:min-w-[175px] px-1 py-2 sm:px-4 sm:py-3 sm:text-[17px] text-[8px] text-white hover:bg-whiteBlue ">
-                    Send Message
-                </button>
-            </form>
-        </div>
-    </div>
-
-</div>
-<div class="w-full flex max-h-[380px] relative sm:max-h-[450px] overflow-hidden ">
-    <div class="w-1/3 md:block hidden hiddenDevLeft relative">
-        <img src="{{asset('images/photo14.jpg')}}" alt=".." class="w-full h-full">
-    </div>
-    <div class="md:w-2/3 w-full relative py-6 sm:py-8 pl-8">
-        <img src="{{asset('images/photo15.jpg')}}" alt="..."
-             class="absolute top-0 right-0 opacity-20 w-full h-full">
-        <div class="w-full h-full flex justify-between z-20">
-            <div class="w-full flex flex-col gap-6">
-                <div class="w-full flex justify-between pr-6 gap-4">
-                    <h2 class="text-[25px] leading-[50px] sm:text-[35px] lg:text-[50px] font-bold nanum">
-                        Clients Have Confidence In Us
+    </nav>
+    <div id="home" class=" mt-4 relative overflow-hidden h-auto w-full">
+        <div class="w-full h-full flex flex-row relative overflow-x-hidden">
+            <div class="w-[38%] slideInLeft flex justify-center items-center relative ">
+                <div class="flex flex-col gap-4 m-4 items-start">
+                    <h2 class="text-[15px]  sm:text-[35px] lg:text-[50px]  font-bold text-darkBlue">
+                        Trusted Legal Solutions For Your Future
                     </h2>
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                         class="w-16 h-16 md:w-32 md:h-32 hiddenDevRight relative"
-                         viewBox="0 0 24 24">
-                        <path fill="#D9C5AF"
-                              d="M19.417 6.679C20.447 7.773 21 9 21 10.989c0 3.5-2.456 6.637-6.03 8.188l-.893-1.378c3.335-1.804 3.987-4.145 4.248-5.621c-.537.278-1.24.375-1.93.311c-1.804-.167-3.226-1.648-3.226-3.489a3.5 3.5 0 0 1 3.5-3.5c1.073 0 2.1.49 2.748 1.179m-10 0C10.447 7.773 11 9 11 10.989c0 3.5-2.456 6.637-6.03 8.188l-.893-1.378c3.335-1.804 3.987-4.145 4.247-5.621c-.537.278-1.24.375-1.929.311C4.591 12.323 3.17 10.842 3.17 9a3.5 3.5 0 0 1 3.5-3.5c1.073 0 2.1.49 2.748 1.179"/>
+                    <p class="text-[8px] sm:text-[12px] lg:text-[17px]">
+                        Law firms are typically structured with partners associates, And support staff Partners senior
+                        attorneys
+                    </p>
+                    <a href="#contact"
+                       class=" w-fit bg-[#5892B7] min-w-[150px] sm:min-w-[175px] px-1 py-2 sm:px-4 sm:py-3 sm:text-[17px] text-[8px] text-white hover:bg-darkBlue">
+                        Let’s Discuss Your Case
+                    </a>
+                </div>
+            </div>
+            <div class="w-[62%] slideInRight relative ">
+                <div class="flex gap-2 sm:gap-4 lg:pr-10 justify-center lg:justify-end items-center h-full">
+                    <img src="/photo1.jpg" alt=".."
+                         class="w-[75px] sm:w-[130px] md:w-[150px] lg:w-[200px]  xl:w-[240px]  2xl:w-[280px] sm:h-[330px] md:h-[400px] lg:h-[600px] xl:h-[640px] 2xl:h-[680px]">
+                    <img src="/photo2.jpg" alt=".."
+                         class="w-[75px] sm:w-[130px] md:w-[150px] lg:w-[200px]  xl:w-[240px]  2xl:w-[280px] sm:h-[330px] md:h-[400px] lg:h-[600px] xl:h-[640px] 2xl:h-[680px] mb-6 sm:mb-12 lg:mb-20 2xl:mb-24">
+                    <img src="/photo3.jpg" alt=".."
+                         class="w-[75px] sm:w-[130px] md:w-[150px] lg:w-[200px]  xl:w-[240px]  2xl:w-[280px] sm:h-[330px] md:h-[400px] lg:h-[600px] xl:h-[640px] 2xl:h-[680px] mb-12 sm:mb-28 lg:mb-44  2xl:mb-48">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="z-40  bg-whiteGray flex gap-4 my-4 justify-between relative overflow-x-hidden">
+        <div class=" hiddenDevLeft relative left-0 w-1/2 p-4 sm:p-12 flex flex-col gap-4 mb-4">
+            <h2 class="text-[13px]  sm:text-[32px] lg:text-[45px]  font-bold text-darkBlue">Responsible Business</h2>
+            <p class="text-[8px] sm:text-[12px] lg:text-[17px]">Addleshaw Goddard is committed to the ongoing journey of
+                having as positive an impact as possible on the world around us – just as we are committed to helping
+                our
+                clients with their journeys. Find out more about that commitment in action, covering diversity,
+                inclusion,
+                community activity, sustainability, and more.  </p>
+        </div>
+        <div class="hiddenDevRight  relative right-0 w-1/2 lg:w-[35%] h-auto p-5  gap-4">
+            <div class="w-full h-full relative flex justify-end flex-wrap md:items-start items-center">
+                <img src="/photo5.jpg" alt=".."
+                     class="w-1/2 h-1/3 md:h-1/2 object-cover mb-4 md:mb-0">
+                <img src="/photo4.jpg" alt=".."
+                     class="w-1/2 h-1/3 md:h-1/2 object-cover mb-4 md:mb-0 absolute z-20 bottom-[5%] left-[5%]">
+            </div>
+        </div>
+    </div>
+    <div class="w-full relative flex flex-col overflow-hidden">
+        <div class="text-darkBlue">
+            <h2 class="text-[13px] text-center sm:text-[32px] lg:text-[45px]  font-bold relative hiddenDevTop">News and
+                Insights</h2>
+            <div class="flex justify-end items-end mr-4  cursor-pointer relative hiddenDevRight">
+                <p class="text-[7px] md:text-[12px]">All Case Project</p>
+                <svg class="w-4 h-4 pt-1 md:pt-0 md:w-5 md:h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="#0E7BC0" d="m12.192 16.827l2.406-4.327H2.5v-1h12.098l-2.406-4.327L19.788 12z"/>
+                </svg>
+            </div>
+        </div>
+        <div class="flex flex-wrap justify-around gap-3 my-4">
+            <div
+                    class="relative hiddenDevButton w-[45%] h-[250px] md:w-[40%] md:h-[280px] lg:w-[20%] lg:h-[350px] flex flex-col bg-whiteGray cursor-pointer group duration-300">
+                <img class="w-full h-1/2 group-hover:p-4" src="/photo6.jpg" alt="...">
+                <div class="w-full h-1/2 p-4 overflow-hidden">
+                    <h4 class="text-[12px] sm:text-[17px] lg:text-[20px]">
+                        Addleshaw Goddard advises Seaya Andromeda on the acquisition of a majority
+                    </h4>
+                </div>
+            </div>
+            <div
+                    class="relative hiddenDevButton w-[45%] h-[250px] md:w-[40%] md:h-[280px] lg:w-[20%] lg:h-[350px] flex flex-col bg-whiteGray cursor-pointer group duration-300">
+                <img class="w-full h-1/2 group-hover:p-4" src="/photo7.jpg" alt="...">
+                <div class="w-full h-1/2 p-4 overflow-hidden">
+                    <h4 class="text-[12px] sm:text-[17px] lg:text-[20px]">
+                        The Paris International Arbitration Newsletter September 2024
+                    </h4>
+                </div>
+            </div>
+            <div
+                    class="relative hiddenDevButton w-[45%] h-[250px] md:w-[40%] md:h-[280px] lg:w-[20%] lg:h-[350px] flex flex-col bg-whiteGray cursor-pointer group duration-300">
+                <img class="w-full h-1/2 group-hover:p-4" src="/photo8.jpg" alt="...">
+                <div class="w-full h-1/2 p-4 overflow-hidden">
+                    <h4 class="text-[12px] sm:text-[17px] lg:text-[20px]">
+                        Addleshaw Goddard advises GED Capital on a capital increase to bring in strategic partners
+                    </h4>
+                </div>
+            </div>
+            <div
+                    class="relative hiddenDevButton w-[45%] h-[250px] md:w-[40%] md:h-[280px] lg:w-[20%] lg:h-[350px] flex flex-col bg-whiteGray cursor-pointer group duration-300">
+                <img class="w-full h-1/2 group-hover:p-4" src="/photo9.jpg" alt="...">
+                <div class="w-full h-1/2 p-4 overflow-hidden">
+                    <h4 class="text-[12px] sm:text-[17px] lg:text-[20px]">
+                        AG Ireland Launch Charity Partnership with Jigsaw
+                    </h4>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    <div id="cases" class="w-full bg-[#202636] p-12 md:p-20 flex flex-col text-white relative overflow-hidden">
+        <div class="flex w-full justify-between h-[33%] border-b-2 border-white pb-6">
+            <h2 class="text-[13px] text-center sm:text-[32px] lg:text-[45px]   font-bold relative ">Our Recent Case
+                Project</h2>
+            <div class="flex justify-end items-end mr-4 text-white cursor-pointer relative hiddenDevRight">
+                <p class="text-[7px] md:text-[12px]">All Case Project</p>
+                <svg class="w-4 h-4 pt-1 md:pt-0 md:w-5 md:h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="#ffffff" d="m12.192 16.827l2.406-4.327H2.5v-1h12.098l-2.406-4.327L19.788 12z"/>
+                </svg>
+            </div>
+        </div>
+        <div class="flex w-full justify-between h-[19%] border-b-2 border-white py-6 items-center">
+            <h3 class="hiddenDevLeft w-[30%] md:w-1/3 text-[12px] text-center sm:text-[25px] lg:text-[30px]">Premier
+                Legal
+                Solutions :</h3>
+            <div class="flex w-[60%] md:w-1/3 items-center">
+                <p class="hiddenDevRight text-[8px]  sm:text-[13px] lg:text-[17px]">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when
+                </p>
+                <div
+                        class="hiddenDevRight p-1 md:p-2 lg:p-3 w-fit h-fit rounded-full bg-whiteBlue hover:bg-darkBlue cursor-pointer">
+                    <svg class="w-5 h-5 lg:w-6 lg:h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill="#ffffff" d="m12.192 16.827l2.406-4.327H2.5v-1h12.098l-2.406-4.327L19.788 12z"/>
                     </svg>
                 </div>
-                <div class="swiper h-full mySwiper">
-                    <div class="swiper-wrapper">
+            </div>
+        </div>
+        <div class="flex w-full justify-between h-[19%] border-b-2 border-white py-6 items-center">
+            <h3 class="hiddenDevLeft w-[30%] md:w-1/3 text-[12px] text-center sm:text-[25px] lg:text-[30px]">Eminent Law
+                Group : :</h3>
+            <div class="flex w-[60%] md:w-1/3 items-center">
+                <p class="hiddenDevRight text-[8px]  sm:text-[13px] lg:text-[17px]">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when
+                </p>
+                <div
+                        class="hiddenDevRight p-1 md:p-2 lg:p-3 w-fit h-fit rounded-full bg-whiteBlue hover:bg-darkBlue cursor-pointer">
+                    <svg class="w-5 h-5 lg:w-6 lg:h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill="#ffffff" d="m12.192 16.827l2.406-4.327H2.5v-1h12.098l-2.406-4.327L19.788 12z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="flex w-full justify-between h-[19%] border-b-2 border-white py-6 items-center">
+            <h3 class="hiddenDevLeft w-[30%] md:w-1/3 text-[12px] text-center sm:text-[25px] lg:text-[30px]">Elite
+                Counsel
+                Attorneys : :</h3>
+            <div class="flex w-[60%] md:w-1/3 items-center">
+                <p class="hiddenDevRight text-[8px]  sm:text-[13px] lg:text-[17px]">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when
+                </p>
+                <div
+                        class="hiddenDevRight p-1 md:p-2 lg:p-3 w-fit h-fit rounded-full bg-whiteBlue hover:bg-darkBlue cursor-pointer">
+                    <svg class="w-5 h-5 lg:w-6 lg:h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill="#ffffff" d="m12.192 16.827l2.406-4.327H2.5v-1h12.098l-2.406-4.327L19.788 12z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
 
-                        <div class="swiper-slide ">
-                            <div class="w-full h-full pl-4 flex flex-col gap-6">
-                                <p class="relative text-[12px] my-4 sm:text-[17px] lg:text-[20px] nanum max-w-[200px] sm:max-w-[400px]">
-                                    “These comments tell me that the commenter read the post. Usually these comments
-                                    are
-                                    longer than three words...”
-                                </p>
+    </div>
+    <div id="blog" class="w-full flex flex-col p-12 md:p-20 justify-center items-center bg-whiteGray gap-6 relative overflow-hidden">
+        <h2 class="text-[13px] hiddenDevTop text-center sm:text-[32px] lg:text-[45px] text-darkBlue nanum relative w-1/2">
+            Our Goals & Achievements In Legal Practice</h2>
+        <p class="text-[8px]  hiddenDevButton sm:text-[13px] lg:text-[17px] w-2/3">Lorem Ipsum is simply dummy text of
+            the
+            printing and typesetting industry. Lorem Ipsum has been the industry's
+            standard dummy text ever since the 1500s, whenLorem Ipsum is simply dummy text of the printing and
+            typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when </p>
 
-                                <div class="flex gap-4 items-center">
-                                    <img src="{{asset('images/man1.jpg')}}" alt="..."
-                                         class="w-12 h-12 rounded-full">
-                                    <h4 class="text-[11px] my-4 sm:text-[16px] lg:text-[18px]">Johan King</h4>
+        <div class="relative w-3/4 h-fit max-w-[900px] max-h-[600px]">
+            <img class="w-full h-full " src="/photo10.jpg" alt="...">
+            <div class="w-full h-full z-20 absolute top-0  bg-[#3B94CC] opacity-25 "></div>
+        </div>
+    </div>
+    <div class="relative overflow-hidden   justify-between flex lg:flex-row flex-col w-full h-auto md:h-[450px] mb-4">
+        <div class="absolute w-full h-full top-0">
+            <div class="absolute bg-[#080C40] opacity-80 z-20 w-full h-full"></div>
+            <img class="w-full h-full object-cover" src="/photo11.jpg" alt="...">
+        </div>
+        <div class="lg:w-1/2 w-full  p-12 z-40 text-white flex flex-col gap-3 ">
+            <h2 class="hiddenDevLeft relative text-[15px] leading-[50px] sm:text-[35px] lg:text-[50px]  font-bold nanum">
+                How
+                Good Lawyers Win Cases</h2>
+            <p class="hiddenDevLeft relative text-[12px] sm:text-[17px] lg:text-[20px] nanum">Lorem Ipsum is simply
+                dummy
+                text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when </p>
+        </div>
+        <div class="flex hiddenDevRight relative lg:w-[40%] h-[110px] sm:h-full w-full flex-col justify-end z-40">
+            <div class="w-full bg-whiteBlue   flex items-center gap-3 p-5 h-3/4 lg:h-[33%]">
+                <div class="p-5 bg-[#202636] w-fit h-fit">
+                    <p class="text-[15px] text-white sm:text-[30px] lg:text-[40px]">40+</p>
+                </div>
+                <h4 class="text-[15px]  sm:text-[30px] lg:text-[40px]">Years Experience</h4>
+            </div>
+        </div>
+    </div>
+    <div class="flex md:flex-row flex-col items-center justify-between my-4 md:max-h-[580px] overflow-hidden relative">
+        <div class="md:hiddenDevLeft md:w-[48%] w-full md:max-w-[650px] max-h-[540px] ">
+            <img src="/photo13.png" alt="..." class="w-full h-full max-h-[540px] object-cover">
+        </div>
+        <div class=" h-auto w-1/3 hidden 3xl:block -scale-x-100	">
+            <img src="/photo12.png" alt="..." class=" w-full h-full object-cover">
+        </div>
+        <div class="  md:w-[48%] w-full  max-w-[650px] h-full relative">
+            <div class="absolute top-0 right-0 h-full w-full 3xl:hidden">
+                <img src="/photo12.png" alt="..." class="opacity-25 w-full h-full object-cover">
+            </div>
+
+            <div class="hiddenDevRight flex flex-col md:pr-5 p-6 gap-4 my-5 z-40">
+                <h2 class="text-[30px] leading-[50px] sm:text-[35px] lg:text-[50px]  font-bold nanum">Have Any Question
+                    ?</h2>
+                <p class="text-[12px] sm:text-[17px] lg:text-[20px] nanum">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an
+                </p>
+                <form class="w-full flex flex-col gap-5">
+                    <div class="w-full flex justify-between">
+                        <input type="text"
+
+                               class="border-2 md:border-4 px-2 border-darkBlue placeholder-darkBlue w-[48%] text-[20px] md:text-[25px] transparent	"
+                               placeholder="Name ..">
+                        <input type="text"
+                               class="border-2 md:border-4 px-2 border-darkBlue placeholder-darkBlue w-[48%] text-[20px] md:text-[25px] transparent	"
+                               placeholder="Name ..">
+                    </div>
+                    <input type="text"
+                           class="border-2 md:border-4 px-2 border-darkBlue placeholder-darkBlue w-full text-[20px] md:text-[25px] transparent	"
+                           placeholder="Name ..">
+                    <textarea type="text"
+                              class="border-2 md:border-4 p-2 border-darkBlue placeholder-darkBlue  text-[20px] md:text-[25px] transparent	"
+                              placeholder="Message ..."></textarea>
+                    <button
+                            type="button"
+                            class=" w-fit bg-darkBlue min-w-[150px] sm:min-w-[175px] px-1 py-2 sm:px-4 sm:py-3 sm:text-[17px] text-[8px] text-white hover:bg-whiteBlue ">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <div class="w-full flex max-h-[380px] relative sm:max-h-[450px] overflow-hidden ">
+        <div class="w-1/3 md:block hidden hiddenDevLeft relative">
+            <img src="/photo14.jpg" alt=".." class="w-full h-full">
+        </div>
+        <div class="md:w-2/3 w-full relative py-6 sm:py-8 pl-8">
+            <img src="/photo15.jpg" alt="..."
+                 class="absolute top-0 right-0 opacity-20 w-full h-full">
+            <div class="w-full h-full flex justify-between z-20">
+                <div class="w-full flex flex-col gap-6">
+                    <div class="w-full flex justify-between pr-6 gap-4">
+                        <h2 class="text-[25px] leading-[50px] sm:text-[35px] lg:text-[50px] font-bold nanum">
+                            Clients Have Confidence In Us
+                        </h2>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="w-16 h-16 md:w-32 md:h-32 hiddenDevRight relative"
+                             viewBox="0 0 24 24">
+                            <path fill="#D9C5AF"
+                                  d="M19.417 6.679C20.447 7.773 21 9 21 10.989c0 3.5-2.456 6.637-6.03 8.188l-.893-1.378c3.335-1.804 3.987-4.145 4.248-5.621c-.537.278-1.24.375-1.93.311c-1.804-.167-3.226-1.648-3.226-3.489a3.5 3.5 0 0 1 3.5-3.5c1.073 0 2.1.49 2.748 1.179m-10 0C10.447 7.773 11 9 11 10.989c0 3.5-2.456 6.637-6.03 8.188l-.893-1.378c3.335-1.804 3.987-4.145 4.247-5.621c-.537.278-1.24.375-1.929.311C4.591 12.323 3.17 10.842 3.17 9a3.5 3.5 0 0 1 3.5-3.5c1.073 0 2.1.49 2.748 1.179"/>
+                        </svg>
+                    </div>
+                    <div class="swiper h-full mySwiper">
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide ">
+                                <div class="w-full h-full pl-4 flex flex-col gap-6">
+                                    <p class="relative text-[12px] my-4 sm:text-[17px] lg:text-[20px] nanum max-w-[200px] sm:max-w-[400px]">
+                                        “These comments tell me that the commenter read the post. Usually these comments
+                                        are
+                                        longer than three words...”
+                                    </p>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="/man1.jpg" alt="..."
+                                             class="w-12 h-12 rounded-full">
+                                        <h4 class="text-[11px] my-4 sm:text-[16px] lg:text-[18px]">Johan King</h4>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide ">
-                            <div class="w-full h-full pl-4 flex flex-col gap-6">
-                                <p class="relative text-[12px] my-4 sm:text-[17px] lg:text-[20px] nanum max-w-[200px] sm:max-w-[400px]">
-                                    “This comment gets its name from the mindset used to create it. These comments
-                                    try
-                                    to camouflage...”
-                                </p>
+                            <div class="swiper-slide ">
+                                <div class="w-full h-full pl-4 flex flex-col gap-6">
+                                    <p class="relative text-[12px] my-4 sm:text-[17px] lg:text-[20px] nanum max-w-[200px] sm:max-w-[400px]">
+                                        “This comment gets its name from the mindset used to create it. These comments
+                                        try
+                                        to camouflage...”
+                                    </p>
 
-                                <div class="flex gap-4 items-center">
-                                    <img src="{{asset('images/man2.jpg')}}" alt="..."
-                                         class="w-12 h-12 rounded-full">
-                                    <h4 class="text-[11px] my-4 sm:text-[16px] lg:text-[18px]">Johan King</h4>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="/man2.jpg" alt="..."
+                                             class="w-12 h-12 rounded-full">
+                                        <h4 class="text-[11px] my-4 sm:text-[16px] lg:text-[18px]">Johan King</h4>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide ">
-                            <div class="w-full h-full pl-4 flex flex-col gap-6">
-                                <p class="relative text-[12px] my-4 sm:text-[17px] lg:text-[20px] nanum max-w-[200px] sm:max-w-[400px]">
-                                    “ This type of comment has absolutely nothing to do with the content in the
-                                    post...”
-                                </p>
+                            <div class="swiper-slide ">
+                                <div class="w-full h-full pl-4 flex flex-col gap-6">
+                                    <p class="relative text-[12px] my-4 sm:text-[17px] lg:text-[20px] nanum max-w-[200px] sm:max-w-[400px]">
+                                        “ This type of comment has absolutely nothing to do with the content in the
+                                        post...”
+                                    </p>
 
-                                <div class="flex gap-4 items-center">
-                                    <img src="{{asset('images/man3.jpg')}}" alt="..."
-                                         class="w-12 h-12 rounded-full">
-                                    <h4 class="text-[11px] my-4 sm:text-[16px] lg:text-[18px]">Johan King</h4>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="/man3.jpg" alt="..."
+                                             class="w-12 h-12 rounded-full">
+                                        <h4 class="text-[11px] my-4 sm:text-[16px] lg:text-[18px]">Johan King</h4>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide ">
-                            <div class="w-full h-full pl-4 flex flex-col gap-6">
-                                <p class="relative text-[12px] my-4 sm:text-[17px] lg:text-[20px] nanum">
-                                    “These are usually “Basic” comments with the addition of “Check out my post” or
-                                    “Follow Me” attached to the end...”
-                                </p>
+                            <div class="swiper-slide ">
+                                <div class="w-full h-full pl-4 flex flex-col gap-6">
+                                    <p class="relative text-[12px] my-4 sm:text-[17px] lg:text-[20px] nanum">
+                                        “These are usually “Basic” comments with the addition of “Check out my post” or
+                                        “Follow Me” attached to the end...”
+                                    </p>
 
-                                <div class="flex gap-4 items-center">
-                                    <img src="{{asset('images/man4.jpg')}}" alt="..."
-                                         class="w-12 h-12 rounded-full">
-                                    <h4 class="text-[11px] my-4 sm:text-[16px] lg:text-[18px]">Johan King</h4>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="/man4.jpg" alt="..."
+                                             class="w-12 h-12 rounded-full">
+                                        <h4 class="text-[11px] my-4 sm:text-[16px] lg:text-[18px]">Johan King</h4>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="swiper-pagination"></div>
+                    <div class="swiper-pagination"></div>
 
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="contact" class="flex w-full max-h-[180px] lg:max-h-[250px] border-b-2 border-darkBlue overflow-hidden relative">
+        <div class="w-[37%] flex flex-col justify-center items-center relative hiddenDevLeft">
+            <div class="flex flex-col">
+                <h2 class="text-[7px] sm:text-[15px] lg:text-[20px] nanum">Hire One Of Oure </h2>
+                <h2 class="text-[7px] sm:text-[15px] lg:text-[20px] nanum">Pure Professianal Lagak</h2>
             </div>
         </div>
-
-    </div>
-</div>
-<div id="contact"
-     class="flex w-full max-h-[180px] lg:max-h-[250px] border-b-2 border-darkBlue overflow-hidden relative">
-    <div class="w-[37%] flex flex-col justify-center items-center relative hiddenDevLeft">
-        <div class="flex flex-col">
-            <h2 class="text-[7px] sm:text-[15px] lg:text-[20px] nanum">Hire One Of Oure </h2>
-            <h2 class="text-[7px] sm:text-[15px] lg:text-[20px] nanum">Pure Professianal Lagak</h2>
+        <div class="w-[26%] flex justify-center items-center relative hiddenDevButton">
+            <img src="/logo2.png" alt="...."
+                 class="w-full h-full max-w-[80px] max-h-[60px] md:max-w-[200px] md:max-h-[150px]  lg:max-w-[300px] lg:max-h-[250px]">
+        </div>
+        <div class="w-[37%] flex flex-col justify-center items-center relative hiddenDevRight">
+            <div class="flex flex-col">
+                <h2 class="text-[7px] sm:text-[15px] lg:text-[20px] nanum">Emergency Call : 01094221030</h2>
+                <h2 class="text-[7px] sm:text-[15px] lg:text-[20px] nanum">Email : mohammad123alhalabi123@gmail.com</h2>
+            </div>
         </div>
     </div>
-    <div class="w-[26%] flex justify-center items-center relative hiddenDevButton">
-        <img src="{{asset('images/logo2.png')}}" alt="...."
-             class="w-full h-full max-w-[80px] max-h-[60px] md:max-w-[200px] md:max-h-[150px]  lg:max-w-[300px] lg:max-h-[250px]">
-    </div>
-    <div class="w-[37%] flex flex-col justify-center items-center relative hiddenDevRight">
-        <div class="flex flex-col">
-            <h2 class="text-[7px] sm:text-[15px] lg:text-[20px] nanum">Emergency Call : 01094221030</h2>
-            <h2 class="text-[7px] sm:text-[15px] lg:text-[20px] nanum">Email : mohammad123alhalabi123@gmail.com</h2>
+    <div class="w-full flex justify-center mt-4 items-center">
+        <div class="flex gap-4 md:gap-6">
+            <svg class="md:w-8 md:h-8 w-5 h-5 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                <path fill="#1877f2"
+                      d="M256 128C256 57.308 198.692 0 128 0S0 57.308 0 128c0 63.888 46.808 116.843 108 126.445V165H75.5v-37H108V99.8c0-32.08 19.11-49.8 48.348-49.8C170.352 50 185 52.5 185 52.5V84h-16.14C152.959 84 148 93.867 148 103.99V128h35.5l-5.675 37H148v89.445c61.192-9.602 108-62.556 108-126.445"/>
+                <path fill="#fff"
+                      d="m177.825 165l5.675-37H148v-24.01C148 93.866 152.959 84 168.86 84H185V52.5S170.352 50 156.347 50C127.11 50 108 67.72 108 99.8V128H75.5v37H108v89.445A129 129 0 0 0 128 256a129 129 0 0 0 20-1.555V165z"/>
+            </svg>
+            <svg class="md:w-8 md:h-8 w-5 h-5 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 209">
+                <path fill="#55acee"
+                      d="M256 25.45a105 105 0 0 1-30.166 8.27c10.845-6.5 19.172-16.793 23.093-29.057a105.2 105.2 0 0 1-33.351 12.745C205.995 7.201 192.346.822 177.239.822c-29.006 0-52.523 23.516-52.523 52.52c0 4.117.465 8.125 1.36 11.97c-43.65-2.191-82.35-23.1-108.255-54.876c-4.52 7.757-7.11 16.78-7.11 26.404c0 18.222 9.273 34.297 23.365 43.716a52.3 52.3 0 0 1-23.79-6.57q-.004.33-.003.661c0 25.447 18.104 46.675 42.13 51.5a52.6 52.6 0 0 1-23.718.9c6.683 20.866 26.08 36.05 49.062 36.475c-17.975 14.086-40.622 22.483-65.228 22.483c-4.24 0-8.42-.249-12.529-.734c23.243 14.902 50.85 23.597 80.51 23.597c96.607 0 149.434-80.031 149.434-149.435q0-3.417-.152-6.795A106.8 106.8 0 0 0 256 25.45"/>
+            </svg>
+            <svg class="md:w-8 md:h-8 w-5 h-5 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                <path fill="#0a66c2"
+                      d="M218.123 218.127h-37.931v-59.403c0-14.165-.253-32.4-19.728-32.4c-19.756 0-22.779 15.434-22.779 31.369v60.43h-37.93V95.967h36.413v16.694h.51a39.91 39.91 0 0 1 35.928-19.733c38.445 0 45.533 25.288 45.533 58.186zM56.955 79.27c-12.157.002-22.014-9.852-22.016-22.009s9.851-22.014 22.008-22.016c12.157-.003 22.014 9.851 22.016 22.008A22.013 22.013 0 0 1 56.955 79.27m18.966 138.858H37.95V95.967h37.97zM237.033.018H18.89C8.58-.098.125 8.161-.001 18.471v219.053c.122 10.315 8.576 18.582 18.89 18.474h218.144c10.336.128 18.823-8.139 18.966-18.474V18.454c-.147-10.33-8.635-18.588-18.966-18.453"/>
+            </svg>
+            <svg class="md:w-8 md:h-8 w-5 h-5 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 258">
+                <defs>
+                    <linearGradient id="logosWhatsappIcon0" x1="50%" x2="50%" y1="100%" y2="0%">
+                        <stop offset="0%" stop-color="#1faf38"/>
+                        <stop offset="100%" stop-color="#60d669"/>
+                    </linearGradient>
+                    <linearGradient id="logosWhatsappIcon1" x1="50%" x2="50%" y1="100%" y2="0%">
+                        <stop offset="0%" stop-color="#f9f9f9"/>
+                        <stop offset="100%" stop-color="#fff"/>
+                    </linearGradient>
+                </defs>
+                <path fill="url(#logosWhatsappIcon0)"
+                      d="M5.463 127.456c-.006 21.677 5.658 42.843 16.428 61.499L4.433 252.697l65.232-17.104a123 123 0 0 0 58.8 14.97h.054c67.815 0 123.018-55.183 123.047-123.01c.013-32.867-12.775-63.773-36.009-87.025c-23.23-23.25-54.125-36.061-87.043-36.076c-67.823 0-123.022 55.18-123.05 123.004"/>
+                <path fill="url(#logosWhatsappIcon1)"
+                      d="M1.07 127.416c-.007 22.457 5.86 44.38 17.014 63.704L0 257.147l67.571-17.717c18.618 10.151 39.58 15.503 60.91 15.511h.055c70.248 0 127.434-57.168 127.464-127.423c.012-34.048-13.236-66.065-37.3-90.15C194.633 13.286 162.633.014 128.536 0C58.276 0 1.099 57.16 1.071 127.416m40.24 60.376l-2.523-4.005c-10.606-16.864-16.204-36.352-16.196-56.363C22.614 69.029 70.138 21.52 128.576 21.52c28.3.012 54.896 11.044 74.9 31.06c20.003 20.018 31.01 46.628 31.003 74.93c-.026 58.395-47.551 105.91-105.943 105.91h-.042c-19.013-.01-37.66-5.116-53.922-14.765l-3.87-2.295l-40.098 10.513z"/>
+                <path fill="#fff"
+                      d="M96.678 74.148c-2.386-5.303-4.897-5.41-7.166-5.503c-1.858-.08-3.982-.074-6.104-.074c-2.124 0-5.575.799-8.492 3.984c-2.92 3.188-11.148 10.892-11.148 26.561s11.413 30.813 13.004 32.94c1.593 2.123 22.033 35.307 54.405 48.073c26.904 10.609 32.379 8.499 38.218 7.967c5.84-.53 18.844-7.702 21.497-15.139c2.655-7.436 2.655-13.81 1.859-15.142c-.796-1.327-2.92-2.124-6.105-3.716s-18.844-9.298-21.763-10.361c-2.92-1.062-5.043-1.592-7.167 1.597c-2.124 3.184-8.223 10.356-10.082 12.48c-1.857 2.129-3.716 2.394-6.9.801c-3.187-1.598-13.444-4.957-25.613-15.806c-9.468-8.442-15.86-18.867-17.718-22.056c-1.858-3.184-.199-4.91 1.398-6.497c1.431-1.427 3.186-3.719 4.78-5.578c1.588-1.86 2.118-3.187 3.18-5.311c1.063-2.126.531-3.986-.264-5.579c-.798-1.593-6.987-17.343-9.819-23.64"/>
+            </svg>
         </div>
     </div>
-</div>
-<div class="w-full flex justify-center mt-4 items-center">
-    <div class="flex gap-4 md:gap-6">
-        <svg class="md:w-8 md:h-8 w-5 h-5 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-            <path fill="#1877f2"
-                  d="M256 128C256 57.308 198.692 0 128 0S0 57.308 0 128c0 63.888 46.808 116.843 108 126.445V165H75.5v-37H108V99.8c0-32.08 19.11-49.8 48.348-49.8C170.352 50 185 52.5 185 52.5V84h-16.14C152.959 84 148 93.867 148 103.99V128h35.5l-5.675 37H148v89.445c61.192-9.602 108-62.556 108-126.445"/>
-            <path fill="#fff"
-                  d="m177.825 165l5.675-37H148v-24.01C148 93.866 152.959 84 168.86 84H185V52.5S170.352 50 156.347 50C127.11 50 108 67.72 108 99.8V128H75.5v37H108v89.445A129 129 0 0 0 128 256a129 129 0 0 0 20-1.555V165z"/>
-        </svg>
-        <svg class="md:w-8 md:h-8 w-5 h-5 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 209">
-            <path fill="#55acee"
-                  d="M256 25.45a105 105 0 0 1-30.166 8.27c10.845-6.5 19.172-16.793 23.093-29.057a105.2 105.2 0 0 1-33.351 12.745C205.995 7.201 192.346.822 177.239.822c-29.006 0-52.523 23.516-52.523 52.52c0 4.117.465 8.125 1.36 11.97c-43.65-2.191-82.35-23.1-108.255-54.876c-4.52 7.757-7.11 16.78-7.11 26.404c0 18.222 9.273 34.297 23.365 43.716a52.3 52.3 0 0 1-23.79-6.57q-.004.33-.003.661c0 25.447 18.104 46.675 42.13 51.5a52.6 52.6 0 0 1-23.718.9c6.683 20.866 26.08 36.05 49.062 36.475c-17.975 14.086-40.622 22.483-65.228 22.483c-4.24 0-8.42-.249-12.529-.734c23.243 14.902 50.85 23.597 80.51 23.597c96.607 0 149.434-80.031 149.434-149.435q0-3.417-.152-6.795A106.8 106.8 0 0 0 256 25.45"/>
-        </svg>
-        <svg class="md:w-8 md:h-8 w-5 h-5 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-            <path fill="#0a66c2"
-                  d="M218.123 218.127h-37.931v-59.403c0-14.165-.253-32.4-19.728-32.4c-19.756 0-22.779 15.434-22.779 31.369v60.43h-37.93V95.967h36.413v16.694h.51a39.91 39.91 0 0 1 35.928-19.733c38.445 0 45.533 25.288 45.533 58.186zM56.955 79.27c-12.157.002-22.014-9.852-22.016-22.009s9.851-22.014 22.008-22.016c12.157-.003 22.014 9.851 22.016 22.008A22.013 22.013 0 0 1 56.955 79.27m18.966 138.858H37.95V95.967h37.97zM237.033.018H18.89C8.58-.098.125 8.161-.001 18.471v219.053c.122 10.315 8.576 18.582 18.89 18.474h218.144c10.336.128 18.823-8.139 18.966-18.474V18.454c-.147-10.33-8.635-18.588-18.966-18.453"/>
-        </svg>
-        <svg class="md:w-8 md:h-8 w-5 h-5 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 258">
-            <defs>
-                <linearGradient id="logosWhatsappIcon0" x1="50%" x2="50%" y1="100%" y2="0%">
-                    <stop offset="0%" stop-color="#1faf38"/>
-                    <stop offset="100%" stop-color="#60d669"/>
-                </linearGradient>
-                <linearGradient id="logosWhatsappIcon1" x1="50%" x2="50%" y1="100%" y2="0%">
-                    <stop offset="0%" stop-color="#f9f9f9"/>
-                    <stop offset="100%" stop-color="#fff"/>
-                </linearGradient>
-            </defs>
-            <path fill="url(#logosWhatsappIcon0)"
-                  d="M5.463 127.456c-.006 21.677 5.658 42.843 16.428 61.499L4.433 252.697l65.232-17.104a123 123 0 0 0 58.8 14.97h.054c67.815 0 123.018-55.183 123.047-123.01c.013-32.867-12.775-63.773-36.009-87.025c-23.23-23.25-54.125-36.061-87.043-36.076c-67.823 0-123.022 55.18-123.05 123.004"/>
-            <path fill="url(#logosWhatsappIcon1)"
-                  d="M1.07 127.416c-.007 22.457 5.86 44.38 17.014 63.704L0 257.147l67.571-17.717c18.618 10.151 39.58 15.503 60.91 15.511h.055c70.248 0 127.434-57.168 127.464-127.423c.012-34.048-13.236-66.065-37.3-90.15C194.633 13.286 162.633.014 128.536 0C58.276 0 1.099 57.16 1.071 127.416m40.24 60.376l-2.523-4.005c-10.606-16.864-16.204-36.352-16.196-56.363C22.614 69.029 70.138 21.52 128.576 21.52c28.3.012 54.896 11.044 74.9 31.06c20.003 20.018 31.01 46.628 31.003 74.93c-.026 58.395-47.551 105.91-105.943 105.91h-.042c-19.013-.01-37.66-5.116-53.922-14.765l-3.87-2.295l-40.098 10.513z"/>
-            <path fill="#fff"
-                  d="M96.678 74.148c-2.386-5.303-4.897-5.41-7.166-5.503c-1.858-.08-3.982-.074-6.104-.074c-2.124 0-5.575.799-8.492 3.984c-2.92 3.188-11.148 10.892-11.148 26.561s11.413 30.813 13.004 32.94c1.593 2.123 22.033 35.307 54.405 48.073c26.904 10.609 32.379 8.499 38.218 7.967c5.84-.53 18.844-7.702 21.497-15.139c2.655-7.436 2.655-13.81 1.859-15.142c-.796-1.327-2.92-2.124-6.105-3.716s-18.844-9.298-21.763-10.361c-2.92-1.062-5.043-1.592-7.167 1.597c-2.124 3.184-8.223 10.356-10.082 12.48c-1.857 2.129-3.716 2.394-6.9.801c-3.187-1.598-13.444-4.957-25.613-15.806c-9.468-8.442-15.86-18.867-17.718-22.056c-1.858-3.184-.199-4.91 1.398-6.497c1.431-1.427 3.186-3.719 4.78-5.578c1.588-1.86 2.118-3.187 3.18-5.311c1.063-2.126.531-3.986-.264-5.579c-.798-1.593-6.987-17.343-9.819-23.64"/>
-        </svg>
-    </div>
-</div>
-<div class="flex px-16 pt-8 md:px-28 overflow-hidden relative md:pt-12 z-20">
-    <div class="w-1/2">
-        <h2 class="text-[15px] sm:text-[20px] lg:text-[25px] nanum">Expertise</h2>
-        <div class="flex flex-col gap-2 my-4">
-            <p class="text-[7px] sm:text-[15px] lg:text-[20px] nanum cursor-pointer hover:text-darkBlue">Industry
-                Law</p>
-            <p class="text-[7px] sm:text-[15px] lg:text-[20px] nanum cursor-pointer hover:text-darkBlue">Cannabis
-                Law</p>
-            <p class="text-[7px] sm:text-[15px] lg:text-[20px] nanum cursor-pointer hover:text-darkBlue">Real State
-                Law</p>
-            <p class="text-[7px] sm:text-[15px] lg:text-[20px] nanum cursor-pointer hover:text-darkBlue">Medical &
-                Insurance Law</p>
-            <p class="text-[7px] sm:text-[15px] lg:text-[20px] nanum cursor-pointer hover:text-darkBlue">Technology
-                7
-                Data Low</p>
+    <div class="flex px-16 pt-8 md:px-28 overflow-hidden relative md:pt-12 z-20">
+        <div class="w-1/2">
+            <h2 class="text-[15px] sm:text-[20px] lg:text-[25px] nanum">Expertise</h2>
+            <div class="flex flex-col gap-2 my-4">
+                <p class="text-[7px] sm:text-[15px] lg:text-[20px] nanum cursor-pointer hover:text-darkBlue">Industry
+                    Law</p>
+                <p class="text-[7px] sm:text-[15px] lg:text-[20px] nanum cursor-pointer hover:text-darkBlue">Cannabis
+                    Law</p>
+                <p class="text-[7px] sm:text-[15px] lg:text-[20px] nanum cursor-pointer hover:text-darkBlue">Real State
+                    Law</p>
+                <p class="text-[7px] sm:text-[15px] lg:text-[20px] nanum cursor-pointer hover:text-darkBlue">Medical &
+                    Insurance Law</p>
+                <p class="text-[7px] sm:text-[15px] lg:text-[20px] nanum cursor-pointer hover:text-darkBlue">Technology
+                    7
+                    Data Low</p>
+            </div>
+        </div>
+        <div class="w-1/2">
+            <h2 class="text-[15px] sm:text-[20px] lg:text-[25px] nanum">FAQ ?</h2>
+            <div class="flex flex-col gap-2 my-4">
+                <p class="text-[7px] sm:text-[15px] lg:text-[20px] nanum cursor-pointer hover:text-darkBlue">What
+                    services
+                    do law firms provide ?</p>
+                <p class="text-[7px] sm:text-[15px] lg:text-[20px] nanum cursor-pointer hover:text-darkBlue">How do i
+                    choose
+                    the right law firm for my lagel needs ?</p>
+                <p class="text-[7px] sm:text-[15px] lg:text-[20px] nanum cursor-pointer hover:text-darkBlue">What
+                    services
+                    do law firms provide ?</p>
+                <p class="text-[7px] sm:text-[15px] lg:text-[20px] nanum cursor-pointer hover:text-darkBlue">What
+                    services
+                    do law firms provide ?</p>
+                <p class="text-[7px] sm:text-[15px] lg:text-[20px] nanum cursor-pointer hover:text-darkBlue">How do i
+                    choose
+                    the right law firm for my lagel needs ?</p>
+                <p class="text-[7px] sm:text-[15px] lg:text-[20px] nanum cursor-pointer hover:text-darkBlue">What
+                    services
+                    do law firms provide ?</p>
+            </div>
         </div>
     </div>
-    <div class="w-1/2">
-        <h2 class="text-[15px] sm:text-[20px] lg:text-[25px] nanum">FAQ ?</h2>
-        <div class="flex flex-col gap-2 my-4">
-            <p class="text-[7px] sm:text-[15px] lg:text-[20px] nanum cursor-pointer hover:text-darkBlue">What
-                services
-                do law firms provide ?</p>
-            <p class="text-[7px] sm:text-[15px] lg:text-[20px] nanum cursor-pointer hover:text-darkBlue">How do i
-                choose
-                the right law firm for my lagel needs ?</p>
-            <p class="text-[7px] sm:text-[15px] lg:text-[20px] nanum cursor-pointer hover:text-darkBlue">What
-                services
-                do law firms provide ?</p>
-            <p class="text-[7px] sm:text-[15px] lg:text-[20px] nanum cursor-pointer hover:text-darkBlue">What
-                services
-                do law firms provide ?</p>
-            <p class="text-[7px] sm:text-[15px] lg:text-[20px] nanum cursor-pointer hover:text-darkBlue">How do i
-                choose
-                the right law firm for my lagel needs ?</p>
-            <p class="text-[7px] sm:text-[15px] lg:text-[20px] nanum cursor-pointer hover:text-darkBlue">What
-                services
-                do law firms provide ?</p>
-        </div>
-    </div>
-</div>
 <script>
     let swiper = new Swiper(".mySwiper", {
         slidesPerView: 1,
@@ -759,6 +689,7 @@ $lang = false;
             prevEl: ".swiper-button-prev",
         },
     });
+
     const observer = new IntersectionObserver((e) => {
         e.forEach((f) => {
             if (f.isIntersecting) {
@@ -818,8 +749,6 @@ $lang = false;
 
 
 </script>
-<script> window.chtlConfig = {chatbotId: "3737331812"} </script>
-<script async data-id="3737331812" id="chatling-embed-script" type="text/javascript"
-        src="https://chatling.ai/js/embed.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
